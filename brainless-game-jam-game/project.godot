@@ -19,6 +19,10 @@ run/main_scene="uid://dvtwiau6yd6nj"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="BrainlessGameJamGame"
+
 [input]
 
 split={

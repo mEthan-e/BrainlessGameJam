@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cnivocjgwguo8"]
+
+[ext_resource type="Texture2D" uid="uid://c2ch7yvbtoith" path="res://icon.svg" id="1_3lx61"]
+[ext_resource type="Script" uid="uid://c0o565cdqtijr" path="res://Scripts/test_player.gd" id="1_4oi1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb32r"]
+size = Vector2(126, 128)
+
+[node name="TestPlayer" type="CharacterBody2D" unique_id=1252202136]
+script = ExtResource("1_4oi1l")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1811391712]
+texture = ExtResource("1_3lx61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=474257826]
+shape = SubResource("RectangleShape2D_pb32r")
+
+[node name="Button" type="Button" parent="." unique_id=177380362]
+offset_left = -63.0
+offset_top = -64.0
+offset_right = 63.0
+offset_bottom = 64.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
