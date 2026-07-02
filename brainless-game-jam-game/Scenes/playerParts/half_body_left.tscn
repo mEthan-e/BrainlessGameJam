@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b12e43o0vaabp"]
+
+[ext_resource type="Script" uid="uid://ir44b6vhbdf3" path="res://Scripts/movement.gd" id="1_5d6nj"]
+[ext_resource type="Texture2D" uid="uid://c2ch7yvbtoith" path="res://icon.svg" id="1_rvdq6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkiog"]
+size = Vector2(64, 128)
+
+[node name="halfBodyLeft" type="CharacterBody2D" unique_id=909319283]
+script = ExtResource("1_5d6nj")
+slime_part = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=621380675]
+texture = ExtResource("1_rvdq6")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=204040842]
+shape = SubResource("RectangleShape2D_nkiog")
