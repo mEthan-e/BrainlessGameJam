@@ -7,14 +7,17 @@ extends CharacterBody2D
 var left_body_scene = preload("res://Scenes/playerParts/half_body_left.tscn")
 var right_body_scene = preload("res://Scenes/playerParts/half_body_right.tscn")
 
-@export var slime_part: int
+
+
 
 const SPEED = 300.0
 var direction
 
+func _ready() -> void:
+	global.current_controlling = 1
+	global.slime_part = 1
 
 func _physics_process(delta: float) -> void:
-	print("running ", name)
 	
 	check_movement(direction)
 	
@@ -44,4 +47,7 @@ func check_split() -> void:
 		
 		add_sibling(left_body)
 		add_sibling(right_body)
+		
+		global.max_next = 3
+		global.current_controlling = 2
 		queue_free()

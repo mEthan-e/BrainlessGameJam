@@ -7,6 +7,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 var direction
 
+func _ready() -> void:
+	global.slime_part = 2
 
 func _physics_process(delta: float) -> void:
 
@@ -16,16 +18,17 @@ func _physics_process(delta: float) -> void:
 	
 	
 func check_movement(direction) -> void:
-	direction = Input.get_vector(
-		"left",
-		"right",
-		"up",
-		"down"
-		)
-		
-	velocity = direction * SPEED
+	if global.current_controlling == 3:
+		direction = Input.get_vector(
+			"left",
+			"right",
+			"up",
+			"down"
+			)
+			
+		velocity = direction * SPEED
 
-	move_and_slide()
+		move_and_slide()
 	
 
 func check_split() -> void:
