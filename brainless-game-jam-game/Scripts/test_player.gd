@@ -7,6 +7,7 @@ var current_split_count
 var is_controlling: bool
 var id: int = 0
 var id_to_assign: int = 0
+var prev_id: int
 @onready var label: Label = $Label # for testing
 
 const SPEED = 300.0
@@ -46,10 +47,11 @@ func manage_split() -> void:
 				return
 		current_split_count += 1
 		id_to_assign += 1
+		
 		for clone in get_parent().get_children():
 			if (clone.is_in_group("players")):
 				if (id_to_assign == clone.id):
-					id_to_assign += 1
+					id_to_assign += 3
 		for i in range(0, split_count):
 			var new_player = player.instantiate()
 			new_player.scale = self.scale / split_count
@@ -57,6 +59,7 @@ func manage_split() -> void:
 			new_player.current_split_count = current_split_count
 			new_player.id = id_to_assign
 			new_player.max_splits = max_splits
+			new_player.prev_id = id
 			new_player.add_to_group(str(id))
 			if (i != 0):
 				new_player.is_controlling = false
@@ -69,34 +72,33 @@ func manage_split() -> void:
 func manage_merge() -> void:
 	if(Input.is_action_just_pressed("merge")):
 		
-
+		var id_to_merge: int = -1
 		if (current_split_count <= 0):
+			print(current_split_count)
 			return
-
+		if (is_controlling):
+			id_to_merge = id
+		if (id <= 0):
+			return
 		var mergeable: bool = false
 		var mean_pos: Vector2
 		var clone_count: int = 0
 		
+		
 		for clone in get_parent().get_children():
-			if (clone.is_in_group("players") && clone.is_in_group(str(id))):
-				if (clone == self):
-					continue
+			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge))):
 				mergeable = true
 				mean_pos += position
-				current_split_count -= 1
 				clone_count += 1
-				print("clone deleted")
+				print("clone of id %s deleted" % [clone.id])
 				clone.queue_free()
 		
 		if (mergeable):
+			current_split_count -= 1
 			var new_player = player.instantiate()
 			new_player.scale = self.scale * split_count
 			new_player.current_split_count = current_split_count
-			id_to_assign -= 1
-			for clone in get_parent().get_children():
-				if (clone.is_in_group("players")):
-					if (id_to_assign == clone.id):
-						id_to_assign -= 1
+			id_to_assign = prev_id
 			new_player.id = id_to_assign
 			new_player.position = mean_pos / clone_count
 			new_player.is_controlling = true
