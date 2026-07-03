@@ -18,4 +18,3 @@ position = Vector2(813, 491)
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("1_jjgbg")]
 position = Vector2(397, 337)
-max_splits = 5
