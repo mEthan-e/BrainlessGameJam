@@ -6,12 +6,14 @@ var player := load("res://Scenes/playerParts/testPlayer.tscn")
 var current_split_count
 var is_controlling: bool
 var id: int = 0
+var id_to_assign: int = 0
 @onready var label: Label = $Label # for testing
 
 const SPEED = 300.0
 var direction
 
 func _ready() -> void:
+	id_to_assign = id
 	add_to_group("players")
 	add_to_group(str(id))
 
@@ -43,13 +45,17 @@ func manage_split() -> void:
 		if(current_split_count >= max_splits):
 				return
 		current_split_count += 1
-		id += 1
+		id_to_assign += 1
+		for clone in get_parent().get_children():
+			if (clone.is_in_group("players")):
+				if (id_to_assign == clone.id):
+					id_to_assign += 1
 		for i in range(0, split_count):
 			var new_player = player.instantiate()
 			new_player.scale = self.scale / split_count
 			new_player.position = self.position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
 			new_player.current_split_count = current_split_count
-			new_player.id = id
+			new_player.id = id_to_assign
 			new_player.max_splits = max_splits
 			new_player.add_to_group(str(id))
 			if (i != 0):
@@ -66,13 +72,13 @@ func manage_merge() -> void:
 
 		if (current_split_count <= 0):
 			return
-		
+
 		var mergeable: bool = false
 		var mean_pos: Vector2
 		var clone_count: int = 0
 		
 		for clone in get_parent().get_children():
-			if (clone.is_in_group(str(id))):
+			if (clone.is_in_group("players") && clone.is_in_group(str(id))):
 				if (clone == self):
 					continue
 				mergeable = true
@@ -84,14 +90,19 @@ func manage_merge() -> void:
 		
 		if (mergeable):
 			var new_player = player.instantiate()
-			new_player.scale = self.scale * 2
+			new_player.scale = self.scale * split_count
 			new_player.current_split_count = current_split_count
-			new_player.id = id - 1
+			id_to_assign -= 1
+			for clone in get_parent().get_children():
+				if (clone.is_in_group("players")):
+					if (id_to_assign == clone.id):
+						id_to_assign -= 1
+			new_player.id = id_to_assign
 			new_player.position = mean_pos / clone_count
 			new_player.is_controlling = true
-			
 			if (!is_controlling):
 				return
+
 			get_parent().add_child(new_player)
 			print("merged")
 			
