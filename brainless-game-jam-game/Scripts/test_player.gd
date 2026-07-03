@@ -4,20 +4,24 @@ extends CharacterBody2D
 @export var max_splits: int = 2 
 var player := load("res://Scenes/playerParts/testPlayer.tscn")
 var current_split_count
-var is_controlling: bool = true # false unless this is the main player and no other clones are spawned, plesae implement
+var is_controlling: bool
 
 const SPEED = 300.0
 var direction
 
 func _ready() -> void:
 	add_to_group("players")
+
 func _init() -> void:
 	current_split_count = 0
+	is_controlling = true  # false unless this is the main player and no other clones are spawned, plesae implement
 
 func _physics_process(delta: float) -> void:
 	check_movement(direction)
 	
 func check_movement(direction) -> void:
+	if (!is_controlling):
+		return
 	direction = Input.get_vector(
 		"left",
 		"right",
@@ -28,8 +32,8 @@ func check_movement(direction) -> void:
 	velocity = direction * SPEED
 
 	move_and_slide()
-
-func _process(delta: float) -> void:
+	
+func manage_split() -> void:
 	if(Input.is_action_just_pressed("split")):
 		if(!is_controlling):
 			return
@@ -41,10 +45,16 @@ func _process(delta: float) -> void:
 			new_player.scale = self.scale / split_count
 			new_player.position = self.position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
 			new_player.current_split_count = current_split_count
-			get_parent().add_child(new_player)
+			if (i != 0):
+				new_player.is_controlling = false
+			else:
+				new_player.is_controlling = true
+			get_parent().add_child(new_player) # why use get_parent().add_child() instead of add_sibling()?
 			print("new clone!")
 		queue_free()
-	
+
+func _process(delta: float) -> void:
+	manage_split()
 	if(Input.is_action_just_pressed("Regroup")):
 		if(!is_controlling):
 			return
@@ -75,14 +85,12 @@ func _process(delta: float) -> void:
 		merged_player.scale = Vector2.ONE
 		merged_player.current_split_count = 0
 
-		get_parent().add_child(merged_player)
-		
-		
-	
-	if (is_controlling):
-		pass # control this player
+		get_parent().add_child(merged_player) # why use get_parent().add_child() instead of add_sibling()?
 
 
 func _on_button_pressed() -> void:
 	is_controlling = !is_controlling
+	for clone in get_parent().get_children():
+		if clone.is_in_group("players") && clone != self:
+			clone.is_controlling = false
 	# disable other clones control.
