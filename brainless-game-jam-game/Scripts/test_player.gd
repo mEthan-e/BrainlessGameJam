@@ -1,16 +1,15 @@
 extends CharacterBody2D
 
 @export var split_count: int = 2
-@export var max_splits: int = 2 
-var player := load("res://Scenes/playerParts/testPlayer.tscn")
+@export var max_splits: int = 2
+var player := load("res://Scenes/Essentials/testPlayer.tscn")
 var current_split_count
 var is_controlling: bool
 var id: int = 0
 var id_to_assign: int = 0
 var prev_id: int
-@onready var label: Label = $Label # for testing
 
-const SPEED = 300.0
+const SPEED = 400.0
 var direction
 
 func _ready() -> void:
@@ -81,15 +80,13 @@ func manage_merge() -> void:
 		if (id <= 0):
 			return
 		var mergeable: bool = false
-		var mean_pos: Vector2
-		var clone_count: int = 0
+		var mean_pos: Vector2 = Vector2.ZERO
 		
 		
 		for clone in get_parent().get_children():
 			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge))):
 				mergeable = true
-				mean_pos += position
-				clone_count += 1
+				mean_pos += clone.position
 				print("clone of id %s deleted" % [clone.id])
 				clone.queue_free()
 		
@@ -100,7 +97,7 @@ func manage_merge() -> void:
 			new_player.current_split_count = current_split_count
 			id_to_assign = prev_id
 			new_player.id = id_to_assign
-			new_player.position = mean_pos / clone_count
+			new_player.position = position
 			new_player.is_controlling = true
 			if (!is_controlling):
 				return
@@ -142,7 +139,6 @@ func manage_regroup() -> void:
 		get_parent().add_child(merged_player) # why use get_parent().add_child() instead of add_sibling()?
 
 func _process(delta: float) -> void:
-	label.text = str(id)
 	manage_split()
 	manage_merge()
 

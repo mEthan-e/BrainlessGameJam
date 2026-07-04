@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dvtwiau6yd6nj"]
+
+[ext_resource type="Texture2D" uid="uid://bl17ur46t82ft" path="res://Dark/texture_01.png" id="1_7i1ub"]
+[ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="2_w0lsm"]
+[ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="3_tpkgp"]
+[ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="4_irfg1"]
+[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/bridge.tscn" id="5_5sf7f"]
+
+[node name="Main" type="Node2D" unique_id=47202430]
+
+[node name="BG" type="TextureRect" parent="." unique_id=334352541]
+offset_right = 1154.0
+offset_bottom = 1024.0
+mouse_filter = 2
+texture = ExtResource("1_7i1ub")
+stretch_mode = 1
+
+[node name="Button" parent="." unique_id=1649036504 instance=ExtResource("2_w0lsm")]
+position = Vector2(813, 491)
+
+[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("3_tpkgp")]
+position = Vector2(397, 337)
+
+[node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("4_irfg1")]
+position = Vector2(461, 636)
+
+[node name="Bridge" parent="." unique_id=1914672110 instance=ExtResource("5_5sf7f")]
+position = Vector2(1.0000153, 772)
+scale = Vector2(15, 3)
+extention_length = 1.0
+
+[connection signal="button_pressed" from="Button" to="Bridge" method="extend" binds= [10.0]]

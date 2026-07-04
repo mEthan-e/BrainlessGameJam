@@ -23,11 +23,4 @@ offset_bottom = 64.0
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=1349143030]
-offset_left = -21.0
-offset_top = -56.0
-offset_right = 19.0
-offset_bottom = -33.0
-text = "ID"
-
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
