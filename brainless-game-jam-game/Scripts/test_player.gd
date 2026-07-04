@@ -8,6 +8,7 @@ var is_controlling: bool
 var id: int = 0
 var id_to_assign: int = 0
 var prev_id: int
+var on_bridge: bool = false
 
 const SPEED = 400.0
 var direction

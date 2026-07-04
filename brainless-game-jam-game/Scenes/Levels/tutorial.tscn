@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://tpefjkhtaub" path="res://Textures/wasd.png" id="1_fenkg"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="2_302wg"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="3_idsh5"]
-[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/bridge.tscn" id="3_mhlsa"]
+[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="3_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="4_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="5_l2k66"]
 
@@ -24,7 +24,7 @@ scale = Vector2(10.71875, 10.71875)
 texture = ExtResource("1_fenkg")
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("3_idsh5")]
-position = Vector2(201, -60)
+position = Vector2(83, 166)
 
 [node name="Bridge" parent="." unique_id=1914672110 instance=ExtResource("3_mhlsa")]
 position = Vector2(2412, 1215)
