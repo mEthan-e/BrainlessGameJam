@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dist23qcjf04j"]
+
+[ext_resource type="Script" uid="uid://cbg35p0i7bddl" path="res://Scripts/level_logic_or.gd" id="1_wjkqq"]
+
+[node name="LogicOr" type="Node" unique_id=852876162]
+script = ExtResource("1_wjkqq")

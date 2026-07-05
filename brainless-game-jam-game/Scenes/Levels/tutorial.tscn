@@ -1,21 +1,29 @@
 [gd_scene format=3 uid="uid://c8sem0bcll1vv"]
 
 [ext_resource type="Texture2D" uid="uid://tpefjkhtaub" path="res://Textures/wasd.png" id="1_fenkg"]
+[ext_resource type="Texture2D" uid="uid://bka3crct8exeg" path="res://Textures/split tutorial.png" id="1_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="2_302wg"]
+[ext_resource type="Texture2D" uid="uid://26dv1ct5u0vf" path="res://Textures/switch tutorial.png" id="2_l2k66"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="3_idsh5"]
 [ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="3_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="4_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="5_l2k66"]
+[ext_resource type="PackedScene" uid="uid://bvpjlix4mw0v2" path="res://Scenes/LevelDesign/danger.tscn" id="5_tospq"]
+[ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="10_iol1o"]
 
 [node name="Tutorial" type="Node2D" unique_id=282511073]
 
-[node name="Label" type="Label" parent="." unique_id=1775194798]
-offset_left = 1654.0
-offset_top = 97.0
-offset_right = 2671.0
-offset_bottom = 279.0
-theme_override_font_sizes/font_size = 133
-text = "SPLIT TUTORIAL"
+[node name="SplitTutorial" type="Sprite2D" parent="." unique_id=1977590202]
+modulate = Color(1, 1, 1, 0.27058825)
+position = Vector2(1943, 342)
+scale = Vector2(12.4058895, 12.4058895)
+texture = ExtResource("1_mhlsa")
+
+[node name="SwitchTutorial" type="Sprite2D" parent="." unique_id=1947035677]
+modulate = Color(1, 1, 1, 0.3019608)
+position = Vector2(2245, 298)
+scale = Vector2(6.230695, 6.230695)
+texture = ExtResource("2_l2k66")
 
 [node name="Wasd" type="Sprite2D" parent="." unique_id=546777975]
 modulate = Color(1, 1, 1, 0.38431373)
@@ -26,7 +34,23 @@ texture = ExtResource("1_fenkg")
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("3_idsh5")]
 position = Vector2(83, 166)
 
-[node name="Bridge" parent="." unique_id=1914672110 instance=ExtResource("3_mhlsa")]
+[node name="Danger" parent="." unique_id=114724795 instance=ExtResource("5_tospq")]
+position = Vector2(2893, 334.00006)
+scale = Vector2(7.064978, 53.06401)
+
+[node name="Danger2" parent="." unique_id=460441369 instance=ExtResource("5_tospq")]
+position = Vector2(3197.9998, 673)
+scale = Vector2(6.161452, 43.43153)
+
+[node name="Danger3" parent="." unique_id=1294528887 instance=ExtResource("5_tospq")]
+position = Vector2(3837.0002, 554)
+scale = Vector2(35.043793, 52.104687)
+
+[node name="Button" parent="." unique_id=1649036504 instance=ExtResource("5_l2k66")]
+position = Vector2(2002, 728)
+scale = Vector2(1.6589209, 1.6589209)
+
+[node name="Door" parent="." unique_id=1914672110 instance=ExtResource("3_mhlsa")]
 position = Vector2(2412, 1215)
 rotation = -1.5707964
 scale = Vector2(30, 3)
@@ -45,10 +69,11 @@ position = Vector2(-68, 2272)
 rotation = 4.712389
 scale = Vector2(1.5443782, 1)
 
-[node name="Button" parent="." unique_id=1649036504 instance=ExtResource("5_l2k66")]
-position = Vector2(2002, 728)
+[node name="Bridge" parent="." unique_id=709602799 instance=ExtResource("10_iol1o")]
+position = Vector2(3465.9998, 481)
+scale = Vector2(18.514685, 2.9824567)
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("2_302wg")]
-position = Vector2(82, 170)
+position = Vector2(108, 524)
 
-[connection signal="button_pressed" from="Button" to="Bridge" method="extend" binds= [5.0]]
+[connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [5.0]]

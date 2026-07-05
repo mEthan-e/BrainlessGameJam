@@ -8,6 +8,7 @@ size = Vector2(126, 128)
 
 [node name="TestPlayer" type="CharacterBody2D" unique_id=1252202136]
 script = ExtResource("1_4oi1l")
+scale_multi = 1.8
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1811391712]
 texture = ExtResource("1_3lx61")

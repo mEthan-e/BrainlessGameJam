@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://m7xf36ti65l0"]
+
+[ext_resource type="Script" uid="uid://c6ss34ia4pxu1" path="res://Scripts/level_logic_not.gd" id="1_b35dk"]
+
+[node name="LogicNot" type="Node" unique_id=852876162]
+script = ExtResource("1_b35dk")

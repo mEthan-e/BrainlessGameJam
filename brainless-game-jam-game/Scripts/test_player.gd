@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var split_count: int = 2
 @export var max_splits: int = 2
+@export var scale_multi: float = 2
 var player := load("res://Scenes/Essentials/testPlayer.tscn")
 var current_split_count
 var is_controlling: bool
@@ -54,7 +55,7 @@ func manage_split() -> void:
 					id_to_assign += 3
 		for i in range(0, split_count):
 			var new_player = player.instantiate()
-			new_player.scale = self.scale / split_count
+			new_player.scale = self.scale / scale_multi
 			new_player.position = self.position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
 			new_player.current_split_count = current_split_count
 			new_player.id = id_to_assign
@@ -94,7 +95,7 @@ func manage_merge() -> void:
 		if (mergeable):
 			current_split_count -= 1
 			var new_player = player.instantiate()
-			new_player.scale = self.scale * split_count
+			new_player.scale = self.scale * scale_multi
 			new_player.current_split_count = current_split_count
 			id_to_assign = prev_id
 			new_player.id = id_to_assign

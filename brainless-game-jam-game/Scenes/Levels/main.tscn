@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bl17ur46t82ft" path="res://Dark/texture_01.png" id="1_7i1ub"]
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="2_w0lsm"]
+[ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="3_irfg1"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="3_tpkgp"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="4_irfg1"]
 [ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="5_5sf7f"]
@@ -19,6 +20,11 @@ stretch_mode = 1
 
 [node name="Button" parent="." unique_id=1649036504 instance=ExtResource("2_w0lsm")]
 position = Vector2(813, 491)
+
+[node name="LogicAnd" parent="." unique_id=852876162 instance=ExtResource("3_irfg1")]
+
+[node name="Button2" parent="." unique_id=22269922 instance=ExtResource("2_w0lsm")]
+position = Vector2(815, 686)
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("4_irfg1")]
 position = Vector2(394, 335)
@@ -39,4 +45,6 @@ scale = Vector2(10, 3)
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("3_tpkgp")]
 position = Vector2(397, 337)
 
-[connection signal="button_pressed" from="Button" to="Bridge" method="extend" binds= [10.0]]
+[connection signal="button_pressed" from="Button" to="LogicAnd" method="input_a_trigger"]
+[connection signal="and_triggered" from="LogicAnd" to="Bridge" method="extend" binds= [5]]
+[connection signal="button_pressed" from="Button2" to="LogicAnd" method="input_b_trigger"]
