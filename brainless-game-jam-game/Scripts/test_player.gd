@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var split_count: int = 2
 @export var max_splits: int = 2
 @export var scale_multi: float = 2
-var player := load("res://Scenes/Essentials/testPlayer.tscn")
+var player := load("res://Scenes/Essentials/testPlayer.tscn") # change as needed, probably an easier way of doing this
 var current_split_count
 var is_controlling: bool
 var id: int = 0
@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _init() -> void:
 	current_split_count = 0
-	is_controlling = true  # false unless this is the main player and no other clones are spawned, plesae implement
+	is_controlling = true  # false unless this is the main player and no other clones are spawned, also managed elsewhere
 
 func _physics_process(delta: float) -> void:
 	check_movement(direction)
@@ -34,13 +34,11 @@ func check_movement(direction) -> void:
 		"right",
 		"up",
 		"down"
-		)
-		
+	)
 	velocity = direction * SPEED
-
 	move_and_slide()
 	
-func manage_split() -> void:
+func manage_split() -> void: # manages spliting into a set amount of clones, changeable through split_count
 	if(Input.is_action_just_pressed("split")):
 		if(!is_controlling):
 			return
@@ -54,23 +52,21 @@ func manage_split() -> void:
 				if (id_to_assign == clone.id):
 					id_to_assign += 3
 		for i in range(0, split_count):
-			var new_player = player.instantiate()
+			var new_player = player.instantiate() # again, probably a more elegant solution out there
 			new_player.scale = self.scale / scale_multi
 			new_player.position = self.position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
 			new_player.current_split_count = current_split_count
 			new_player.id = id_to_assign
 			new_player.max_splits = max_splits
 			new_player.prev_id = id
+			new_player.scale_multi = scale_multi
 			new_player.add_to_group(str(id))
-			if (i != 0):
-				new_player.is_controlling = false
-			else:
-				new_player.is_controlling = true
+			new_player.is_controlling = i == 0
 			get_parent().add_child(new_player) # why use get_parent().add_child() instead of add_sibling()?
 			print("new clone!")
 		queue_free()
 		
-func manage_merge() -> void:
+func manage_merge() -> void: # manages the merging of two clones, we could add a ranged functionality
 	if(Input.is_action_just_pressed("merge")):
 		
 		var id_to_merge: int = -1
@@ -107,7 +103,7 @@ func manage_merge() -> void:
 			get_parent().add_child(new_player)
 			print("merged")
 			
-func manage_regroup() -> void:
+func manage_regroup() -> void: # unused, old code that doesn't work
 	if(Input.is_action_just_pressed("Regroup")):
 		if(!is_controlling):
 			return
