@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqbwtig048jwh"
+path="res://.godot/imported/Win sfx.mp3-a78722dc2af7f9aad616f4f03ce1a19e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Win sfx.mp3"
+dest_files=["res://.godot/imported/Win sfx.mp3-a78722dc2af7f9aad616f4f03ce1a19e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
