@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var max_splits: int = 2
 @export var scale_multi: float = 2
 @onready var move_sound: AudioStreamPlayer2D = $move_sound
-@onready var split_sound: AudioStreamPlayer2D = $split_sound
+
 var player := load("res://Scenes/Essentials/testPlayer.tscn") # change as needed, probably an easier way of doing this
 var current_split_count
 var is_controlling: bool
@@ -48,18 +48,21 @@ func check_movement(direction) -> void:
 	
 func manage_split() -> void: # manages spliting into a set amount of clones, changeable through split_count
 	if(Input.is_action_just_pressed("split")):
+		
 		if(!is_controlling):
 			return
+
 		if(current_split_count >= max_splits):
 				return
 		current_split_count += 1
 		id_to_assign += 1
-		
+			
 		for clone in get_parent().get_children():
 			if (clone.is_in_group("players")):
 				if (id_to_assign == clone.id):
 					id_to_assign += 3
 		for i in range(0, split_count):
+			
 			var new_player = player.instantiate() # again, probably a more elegant solution out there
 			new_player.scale = self.scale / scale_multi
 			new_player.position = self.position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
@@ -72,9 +75,7 @@ func manage_split() -> void: # manages spliting into a set amount of clones, cha
 			new_player.is_controlling = i == 0
 			get_parent().add_child(new_player) # why use get_parent().add_child() instead of add_sibling()?
 			print("new clone!")
-		if(!split_sound.playing):
-			split_sound.volume_db = 48.0
-			split_sound.play()
+
 		queue_free()
 		
 func manage_merge() -> void: # manages the merging of two clones, we could add a ranged functionality

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c4gea8rsk3h2e"]
+
+[ext_resource type="Script" uid="uid://dh7eyt4cgcqml" path="res://level_end_trigger.gd" id="1_btf5b"]
+[ext_resource type="AudioStream" uid="uid://bqbwtig048jwh" path="res://Sounds/Win sfx.mp3" id="2_11hq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w0r3"]
+size = Vector2(41, 38)
+
+[node name="LevelEnd" type="Area2D" unique_id=992756739]
+script = ExtResource("1_btf5b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435761245]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1664560867]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623840804]
+position = Vector2(19.5, 20)
+shape = SubResource("RectangleShape2D_8w0r3")
+
+[node name="win" type="AudioStreamPlayer2D" parent="." unique_id=716397003]
+stream = ExtResource("2_11hq4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

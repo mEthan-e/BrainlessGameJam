@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://clyeo05johq7a"]
+
+[ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="1_cyadu"]
+[ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="2_xgxfi"]
+[ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="3_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="4_jv26f"]
+[ext_resource type="PackedScene" uid="uid://bvpjlix4mw0v2" path="res://Scenes/LevelDesign/danger.tscn" id="5_jv26f"]
+[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="5_rb0md"]
+[ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="6_5f3p6"]
+[ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="7_jv26f"]
+[ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="7_u5ghp"]
+
+[node name="level1" type="Node2D" unique_id=420048108]
+
+[node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("2_xgxfi")]
+position = Vector2(690, 514)
+
+[node name="Button4" parent="." unique_id=1649036504 instance=ExtResource("6_5f3p6")]
+position = Vector2(566, 364)
+
+[node name="Button5" parent="." unique_id=1804180563 instance=ExtResource("6_5f3p6")]
+position = Vector2(575, 926)
+
+[node name="LogicAnd" parent="." unique_id=852876162 instance=ExtResource("7_jv26f")]
+
+[node name="MainDoor" parent="." unique_id=1914672110 instance=ExtResource("5_rb0md")]
+position = Vector2(893, 145)
+rotation = 1.5707964
+scale = Vector2(22.640001, 3)
+extention_length = 1.0
+
+[node name="Danger" parent="." unique_id=114724795 instance=ExtResource("5_jv26f")]
+position = Vector2(2543, 619)
+scale = Vector2(123.233116, 65.360374)
+
+[node name="Bridge" parent="." unique_id=709602799 instance=ExtResource("7_u5ghp")]
+position = Vector2(1987.0001, 891.00006)
+rotation = -1.5707964
+extention_length = 30.0
+
+[node name="Bridge2" parent="." unique_id=932854133 instance=ExtResource("7_u5ghp")]
+position = Vector2(2036, 280)
+extention_length = 15.0
+
+[node name="Bridge3" parent="." unique_id=1144033380 instance=ExtResource("7_u5ghp")]
+position = Vector2(2792, 331)
+rotation = 1.5707964
+extention_length = 30.0
+
+[node name="Bridge4" parent="." unique_id=798992289 instance=ExtResource("7_u5ghp")]
+position = Vector2(1297, 829)
+scale = Vector2(21.520002, 4.000001)
+colour = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Bridge5" parent="." unique_id=1196994959 instance=ExtResource("7_u5ghp")]
+position = Vector2(2637, 835)
+scale = Vector2(29.08, 4.000001)
+colour = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Bridge6" parent="." unique_id=1715030395 instance=ExtResource("7_u5ghp")]
+position = Vector2(1950.0002, 267)
+scale = Vector2(4.4399977, 4.000001)
+colour = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Bridge7" parent="." unique_id=2140361716 instance=ExtResource("7_u5ghp")]
+position = Vector2(2637, 261)
+scale = Vector2(4.4399977, 4.000001)
+colour = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="Wall" parent="." unique_id=1311654722 instance=ExtResource("1_cyadu")]
+position = Vector2(-190, 189)
+scale = Vector2(2.16, 1)
+
+[node name="Wall2" parent="." unique_id=1510688601 instance=ExtResource("1_cyadu")]
+position = Vector2(4577, 1059)
+rotation = -3.1415925
+scale = Vector2(2.1199975, 1)
+
+[node name="Button" parent="." unique_id=2065112175 instance=ExtResource("6_5f3p6")]
+position = Vector2(2097, 937)
+
+[node name="Button2" parent="." unique_id=1478730664 instance=ExtResource("6_5f3p6")]
+position = Vector2(2005, 311)
+
+[node name="Button3" parent="." unique_id=915877954 instance=ExtResource("6_5f3p6")]
+position = Vector2(2770, 315)
+
+[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("3_5f3p6")]
+position = Vector2(5850, 648)
+
+[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
+position = Vector2(29, 363)
+
+[connection signal="button_pressed" from="Button4" to="LogicAnd" method="input_a_trigger"]
+[connection signal="button_pressed" from="Button5" to="LogicAnd" method="input_b_trigger"]
+[connection signal="and_triggered" from="LogicAnd" to="MainDoor" method="extend" binds= [10.0]]
+[connection signal="button_pressed" from="Button" to="Bridge" method="extend" binds= [5.0]]
+[connection signal="button_pressed" from="Button2" to="Bridge2" method="extend" binds= [5.0]]
+[connection signal="button_pressed" from="Button3" to="Bridge3" method="extend" binds= [5.0]]

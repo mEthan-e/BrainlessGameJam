@@ -6,10 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://26dv1ct5u0vf" path="res://Textures/switch tutorial.png" id="2_l2k66"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="3_idsh5"]
 [ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="3_mhlsa"]
+[ext_resource type="Texture2D" uid="uid://ch3fvge8x2f2k" path="res://Textures/skull.png" id="4_jovcd"]
 [ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="4_mhlsa"]
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="5_l2k66"]
 [ext_resource type="PackedScene" uid="uid://bvpjlix4mw0v2" path="res://Scenes/LevelDesign/danger.tscn" id="5_tospq"]
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="10_iol1o"]
+[ext_resource type="PackedScene" uid="uid://clyeo05johq7a" path="res://Scenes/Levels/level_1.tscn" id="12_qvtqq"]
+[ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="12_sghjv"]
 
 [node name="Tutorial" type="Node2D" unique_id=282511073]
 
@@ -30,6 +33,12 @@ modulate = Color(1, 1, 1, 0.38431373)
 position = Vector2(754, 271)
 scale = Vector2(10.71875, 10.71875)
 texture = ExtResource("1_fenkg")
+
+[node name="Skull" type="Sprite2D" parent="." unique_id=602220464]
+modulate = Color(1, 1, 1, 0.30980393)
+position = Vector2(3039, 836)
+scale = Vector2(3.0546868, 3.0546868)
+texture = ExtResource("4_jovcd")
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("3_idsh5")]
 position = Vector2(83, 166)
@@ -73,7 +82,12 @@ scale = Vector2(1.5443782, 1)
 position = Vector2(3465.9998, 481)
 scale = Vector2(18.514685, 2.9824567)
 
+[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("12_sghjv")]
+position = Vector2(4436, 478)
+scale = Vector2(3.3780468, 3.3780468)
+next_level = ExtResource("12_qvtqq")
+
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("2_302wg")]
-position = Vector2(108, 524)
+position = Vector2(731, 582)
 
 [connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [5.0]]

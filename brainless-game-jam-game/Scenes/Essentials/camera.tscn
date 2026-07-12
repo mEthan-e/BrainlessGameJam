@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://ddicf3rvq1hck"]
 
 [ext_resource type="Script" uid="uid://cln3wfylqp6dr" path="res://Scripts/camera_follow.gd" id="1_375tr"]
+[ext_resource type="AudioStream" uid="uid://cy05o178pthas" path="res://Sounds/death sfx.mp3" id="2_ifyfv"]
 
 [node name="Camera" type="Camera2D" unique_id=1898050018]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 editor_draw_limits = true
 script = ExtResource("1_375tr")
+
+[node name="death" type="AudioStreamPlayer2D" parent="." unique_id=1884533309]
+stream = ExtResource("2_ifyfv")

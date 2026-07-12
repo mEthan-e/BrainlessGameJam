@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://c0o565cdqtijr" path="res://Scripts/test_player.gd" id="1_4oi1l"]
 [ext_resource type="Texture2D" uid="uid://cx0j1fhufl7gn" path="res://Textures/Sprite_slime-0001.png" id="2_nxl6g"]
 [ext_resource type="AudioStream" uid="uid://d01eqgi2nllve" path="res://Sounds/moving sfx.mp3" id="3_an1bf"]
-[ext_resource type="AudioStream" uid="uid://dk1clkygasuny" path="res://Sounds/merging [sfx].mp3" id="4_7y5xu"]
-[ext_resource type="AudioStream" uid="uid://bs7vq1ln5lkr4" path="res://Sounds/spliting sfx.mp3" id="5_ntimf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb32r"]
 size = Vector2(126, 128)
@@ -30,14 +28,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="move_sound" type="AudioStreamPlayer2D" parent="." unique_id=1624370491]
 stream = ExtResource("3_an1bf")
-volume_db = 24.0
-
-[node name="merge_sound" type="AudioStreamPlayer2D" parent="." unique_id=1299545674]
-stream = ExtResource("4_7y5xu")
-volume_db = 24.0
-
-[node name="split_sound" type="AudioStreamPlayer2D" parent="." unique_id=980135067]
-stream = ExtResource("5_ntimf")
-volume_db = 24.0
+volume_db = 18.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

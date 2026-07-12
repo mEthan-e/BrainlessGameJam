@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c01q7n361vphh" path="res://Scripts/button.gd" id="1_0kpiu"]
 [ext_resource type="Texture2D" uid="uid://cmfyvmtjlqk35" path="res://Textures/button.png" id="2_0kpiu"]
 [ext_resource type="Texture2D" uid="uid://csbpfbshtslsv" path="res://Textures/button_pressed.png" id="3_smycg"]
+[ext_resource type="AudioStream" uid="uid://s1nxaui1hqmq" path="res://Sounds/button on sfx.mp3" id="4_8psqp"]
+[ext_resource type="AudioStream" uid="uid://dgy2gdtripplr" path="res://Sounds/button off sfx.mp3" id="5_sgd04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ht7lc"]
 size = Vector2(73, 71)
@@ -21,6 +23,12 @@ texture = ExtResource("2_0kpiu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1212045520]
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_ht7lc")
+
+[node name="button_on" type="AudioStreamPlayer2D" parent="." unique_id=2141716671]
+stream = ExtResource("4_8psqp")
+
+[node name="button_off" type="AudioStreamPlayer2D" parent="." unique_id=1058328422]
+stream = ExtResource("5_sgd04")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
