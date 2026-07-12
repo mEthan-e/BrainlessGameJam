@@ -8,6 +8,10 @@ var extending: bool = false
 @onready var color_rect: ColorRect = $ColorRect
 var last_scale: float
 var bodys_on_bridge: Array
+var bridge_transfer: bool = false
+
+func _ready() -> void:
+	add_to_group("bridge")
 
 func extend(time: int) -> void:
 	var open_sound_count = 0 
@@ -32,7 +36,7 @@ func _process(delta: float) -> void:
 	last_scale = scale.x
 
 func _on_body_exited(body: Node2D) -> void:
-	if(body.is_in_group("players")):
+	if(body.is_in_group("players") && !bridge_transfer):
 		bodys_on_bridge.erase(body)
 		body.on_bridge = false
 
@@ -41,3 +45,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("players")):
 		body.on_bridge = true
 		bodys_on_bridge.append(body)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if (area.is_in_group("bridge")):
+		bridge_transfer = true

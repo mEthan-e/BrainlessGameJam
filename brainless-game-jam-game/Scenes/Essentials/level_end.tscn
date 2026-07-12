@@ -23,4 +23,14 @@ shape = SubResource("RectangleShape2D_8w0r3")
 [node name="win" type="AudioStreamPlayer2D" parent="." unique_id=716397003]
 stream = ExtResource("2_11hq4")
 
+[node name="Label" type="Label" parent="." unique_id=1575900193]
+offset_top = 10.0
+offset_right = 48.0
+offset_bottom = 33.0
+scale = Vector2(0.8219714, 0.8219714)
+theme_override_font_sizes/font_size = 6
+text = "LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

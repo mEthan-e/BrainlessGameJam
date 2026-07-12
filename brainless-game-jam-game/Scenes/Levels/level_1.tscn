@@ -30,22 +30,25 @@ scale = Vector2(22.640001, 3)
 extention_length = 1.0
 
 [node name="Danger" parent="." unique_id=114724795 instance=ExtResource("5_jv26f")]
-position = Vector2(2543, 619)
-scale = Vector2(123.233116, 65.360374)
+position = Vector2(2555, 423.00006)
+scale = Vector2(123.233116, 65.20037)
 
 [node name="Bridge" parent="." unique_id=709602799 instance=ExtResource("7_u5ghp")]
-position = Vector2(1987.0001, 891.00006)
+position = Vector2(1987, 990.00006)
 rotation = -1.5707964
 extention_length = 30.0
+colour = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
 [node name="Bridge2" parent="." unique_id=932854133 instance=ExtResource("7_u5ghp")]
-position = Vector2(2036, 280)
-extention_length = 15.0
+position = Vector2(2008, 280)
+extention_length = 20.0
+colour = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
 [node name="Bridge3" parent="." unique_id=1144033380 instance=ExtResource("7_u5ghp")]
-position = Vector2(2792, 331)
+position = Vector2(2792, 300)
 rotation = 1.5707964
 extention_length = 30.0
+colour = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
 [node name="Bridge4" parent="." unique_id=798992289 instance=ExtResource("7_u5ghp")]
 position = Vector2(1297, 829)
@@ -86,7 +89,8 @@ position = Vector2(2005, 311)
 position = Vector2(2770, 315)
 
 [node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("3_5f3p6")]
-position = Vector2(5850, 648)
+position = Vector2(4074.9998, 518)
+scale = Vector2(4.383043, 4.383043)
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
 position = Vector2(29, 363)
