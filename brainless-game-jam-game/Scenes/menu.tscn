@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://yshxhoanof74"]
+
+[ext_resource type="Script" uid="uid://b1if5jl6n3xd2" path="res://Scenes/play.gd" id="1_1rerr"]
+[ext_resource type="PackedScene" uid="uid://c8sem0bcll1vv" path="res://Scenes/Levels/tutorial.tscn" id="2_xhh6f"]
+[ext_resource type="Script" uid="uid://d4dyydk5oo67l" path="res://Scenes/exit.gd" id="3_cayip"]
+
+[node name="Menu" type="Control" unique_id=783149539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="Button" parent="." unique_id=733995029]
+layout_mode = 0
+offset_left = 1133.0
+offset_top = 256.0
+offset_right = 1737.0
+offset_bottom = 601.0
+scale = Vector2(0.58267295, 0.58267295)
+theme_override_font_sizes/font_size = 119
+text = "BEGIN"
+script = ExtResource("1_1rerr")
+initial_scene = ExtResource("2_xhh6f")
+
+[node name="Exit" type="Button" parent="." unique_id=923663006]
+layout_mode = 0
+offset_left = 1133.0
+offset_top = 698.0
+offset_right = 1737.0
+offset_bottom = 1043.0
+scale = Vector2(0.58267295, 0.58267295)
+theme_override_font_sizes/font_size = 119
+text = "EXIT"
+script = ExtResource("3_cayip")
+
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]

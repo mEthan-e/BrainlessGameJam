@@ -2,33 +2,33 @@
 
 [ext_resource type="Script" uid="uid://dh7eyt4cgcqml" path="res://level_end_trigger.gd" id="1_btf5b"]
 [ext_resource type="AudioStream" uid="uid://bqbwtig048jwh" path="res://Sounds/Win sfx.mp3" id="2_11hq4"]
+[ext_resource type="Texture2D" uid="uid://cfty8xsr67jcd" path="res://Textures/pixil-frame-0 (2).png" id="2_cfjvi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w0r3"]
-size = Vector2(41, 38)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hagow"]
+radius = 14.5
 
 [node name="LevelEnd" type="Area2D" unique_id=992756739]
 script = ExtResource("1_btf5b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435761245]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1664560867]
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 1, 0, 1)
+position = Vector2(20, 20)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_cfjvi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623840804]
-position = Vector2(19.5, 20)
-shape = SubResource("RectangleShape2D_8w0r3")
+position = Vector2(21, 20)
+shape = SubResource("CircleShape2D_hagow")
 
 [node name="win" type="AudioStreamPlayer2D" parent="." unique_id=716397003]
 stream = ExtResource("2_11hq4")
 
 [node name="Label" type="Label" parent="." unique_id=1575900193]
-offset_top = 10.0
-offset_right = 48.0
-offset_bottom = 33.0
+offset_left = 1.0
+offset_top = -14.0
+offset_right = 49.0
+offset_bottom = 9.0
 scale = Vector2(0.8219714, 0.8219714)
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 10
 text = "LABEL"
 horizontal_alignment = 1
 vertical_alignment = 1
