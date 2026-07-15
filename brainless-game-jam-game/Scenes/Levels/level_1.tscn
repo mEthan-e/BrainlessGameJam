@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="7_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://v2jd0sqgmbp1" path="res://Scenes/Levels/level_2.tscn" id="9_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="12_afv7b"]
+[ext_resource type="Texture2D" uid="uid://hqirjwlysqbt" path="res://Textures/pixil-frame-08.png" id="13_tjl6l"]
+[ext_resource type="Texture2D" uid="uid://bekh02dr5gylv" path="res://Textures/pixil-frame-0_3.png" id="14_3628d"]
+[ext_resource type="Texture2D" uid="uid://brvccvgdkr8n0" path="res://Textures/table.png" id="15_irw6p"]
 
 [node name="level1" type="Node2D" unique_id=420048108]
 
@@ -119,6 +122,28 @@ next_level = ExtResource("9_u5ghp")
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
 position = Vector2(29, 363)
+
+[node name="PixilFrame08" type="Sprite2D" parent="." unique_id=1610351762]
+position = Vector2(-8, 872)
+scale = Vector2(3.0613208, 3.0613208)
+texture = ExtResource("13_tjl6l")
+
+[node name="PixilFrame03" type="Sprite2D" parent="." unique_id=2043271931]
+position = Vector2(3001, 462)
+rotation = -0.2945565
+scale = Vector2(5.85674, 5.85674)
+texture = ExtResource("14_3628d")
+
+[node name="PixilFrame04" type="Sprite2D" parent="." unique_id=1965299018]
+position = Vector2(1658, 619)
+rotation = 0.46029115
+scale = Vector2(6.6868463, 6.6868463)
+texture = ExtResource("14_3628d")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=2034403768]
+position = Vector2(4261.0005, 897)
+scale = Vector2(8.61, 8.61)
+texture = ExtResource("15_irw6p")
 
 [connection signal="button_pressed" from="Button4" to="LogicAnd" method="input_a_trigger"]
 [connection signal="button_pressed" from="Button5" to="LogicAnd" method="input_b_trigger"]

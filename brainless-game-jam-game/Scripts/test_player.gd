@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var max_splits: int = 2
 @export var scale_multi: float = 2
 @onready var move_sound: AudioStreamPlayer2D = $move_sound
+@onready var collision: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var icon: AnimatedSprite2D = $Icon
+@export var SPEED = 400.0
 
 var player := load("res://Scenes/Essentials/testPlayer.tscn") # change as needed, probably an easier way of doing this
 var current_split_count
@@ -15,7 +18,7 @@ var on_bridge: int = 0
 var on_lava: bool = false
 var mergeable_dist: bool = false
 
-const SPEED = 400.0
+
 var direction
 
 func _ready() -> void:
@@ -43,8 +46,17 @@ func check_movement(direction) -> void:
 		if(!move_sound.playing):
 			move_sound.pitch_scale = randf_range(0.80, 1.20)
 			move_sound.play()
+		if (direction == Vector2.RIGHT):
+			icon.play("walk")
+		elif (direction == Vector2.LEFT):
+			icon.play("walk_left")
+		elif (direction == Vector2.UP):
+			icon.play("walk_up")
+		elif (direction == Vector2.DOWN):
+			icon.play("walk_down")
 	else:
 		move_sound.stop()
+		icon.play("idle")
 	velocity = direction * SPEED
 	move_and_slide()
 	
@@ -75,6 +87,7 @@ func manage_split() -> void: # manages spliting into a set amount of clones, cha
 			new_player.scale_multi = scale_multi
 			new_player.add_to_group(str(id))
 			new_player.is_controlling = i == 0
+			new_player.SPEED = SPEED
 			get_parent().add_child(new_player) # why use get_parent().add_child() instead of add_sibling()?
 			print("new clone!")
 
@@ -96,7 +109,7 @@ func manage_merge() -> void: # manages the merging of two clones, we could add a
 		
 		
 		for clone in get_parent().get_children():
-			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge)) && clone.mergeable_dist):
+			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge)) && clone.mergeable_dist): #
 				mergeable = true
 				mean_pos += clone.position
 				print("clone of id %s deleted" % [clone.id])
@@ -111,6 +124,7 @@ func manage_merge() -> void: # manages the merging of two clones, we could add a
 			new_player.id = id_to_assign
 			new_player.position = position
 			new_player.is_controlling = true
+			new_player.SPEED = SPEED
 			if (!is_controlling):
 				return
 

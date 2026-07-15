@@ -3,12 +3,44 @@
 [ext_resource type="Script" uid="uid://bp8fikj1u2bx1" path="res://Scripts/danger.gd" id="1_42c45"]
 [ext_resource type="Script" uid="uid://bkixssqkvq0xr" path="res://Scripts/laser.gd" id="1_jcuu2"]
 [ext_resource type="AudioStream" uid="uid://cy05o178pthas" path="res://Sounds/death sfx.mp3" id="3_x1mws"]
+[ext_resource type="Texture2D" uid="uid://bqims8byhob1r" path="res://Textures/pixilart-sprite_5.png" id="4_hced6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8psqp"]
 size = Vector2(10, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rqup"]
+atlas = ExtResource("4_hced6")
+region = Rect2(0, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uepp5"]
+atlas = ExtResource("4_hced6")
+region = Rect2(100, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2lb1"]
+atlas = ExtResource("4_hced6")
+region = Rect2(200, 0, 100, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pb32r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rqup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uepp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2lb1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1983723932]
 script = ExtResource("1_jcuu2")
+on_col = Color(1, 1, 1, 1)
+off_col = Color(0.12941177, 0.12941177, 0.12941177, 0.3019608)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=670309512]
 script = ExtResource("1_42c45")
@@ -19,6 +51,10 @@ position = Vector2(25, 0)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_8psqp")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=1916426910]
-points = PackedVector2Array(0, 0, 50, 0)
-default_color = Color(0.9115605, 0.35008866, 0.37195015, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=498493620]
+position = Vector2(25.000002, -1.1368684e-13)
+rotation = 1.5707964
+scale = Vector2(0.1007024, 0.34070408)
+sprite_frames = SubResource("SpriteFrames_pb32r")
+autoplay = "default"
+frame_progress = 0.31571743

@@ -4,13 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://bvpjlix4mw0v2" path="res://Scenes/LevelDesign/danger.tscn" id="1_pnnky"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="1_ucdhh"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="2_oylv5"]
+[ext_resource type="Texture2D" uid="uid://cw4c14mywfm5o" path="res://Textures/pixil-frame-0_1.png" id="2_yxf76"]
 [ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="3_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="3_w2ac1"]
 [ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="4_8qsmg"]
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="4_ovj6s"]
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="6_blpqv"]
 [ext_resource type="PackedScene" uid="uid://g74nmkvwaple" path="res://Scenes/LevelDesign/laser.tscn" id="9_blpqv"]
+[ext_resource type="PackedScene" uid="uid://bi1vyae1shjg3" path="res://Scenes/Levels/level_3.tscn" id="10_0x4y1"]
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="10_1jlnc"]
+[ext_resource type="Texture2D" uid="uid://brvccvgdkr8n0" path="res://Textures/table.png" id="14_ia1lp"]
+[ext_resource type="Texture2D" uid="uid://bekh02dr5gylv" path="res://Textures/pixil-frame-0_3.png" id="15_5buja"]
+[ext_resource type="Texture2D" uid="uid://hqirjwlysqbt" path="res://Textures/pixil-frame-08.png" id="16_wyygt"]
 
 [node name="Level2" type="Node2D" unique_id=1093735696]
 
@@ -18,6 +23,11 @@
 modulate = Color(1, 1, 1, 0.13725491)
 position = Vector2(2133.5, 678.0001)
 scale = Vector2(136.03123, 48.874996)
+
+[node name="PixilFrame01" type="Sprite2D" parent="." unique_id=1609369040]
+position = Vector2(4125, 1136)
+scale = Vector2(7.11, 7.1100006)
+texture = ExtResource("2_yxf76")
 
 [node name="Door" parent="." unique_id=1914672110 instance=ExtResource("3_ovj6s")]
 position = Vector2(-432.00003, 510)
@@ -101,13 +111,29 @@ scale = Vector2(1.3100011, 1)
 [node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("10_1jlnc")]
 position = Vector2(4029, 563)
 scale = Vector2(1.3493396, 1.3493396)
-clone_size_min = 0
+next_level = ExtResource("10_0x4y1")
+clone_size_min = 1
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("1_ucdhh")]
 position = Vector2(68.99988, 77.99994)
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("2_oylv5")]
 position = Vector2(72.999756, 82.99994)
+
+[node name="Table" type="Sprite2D" parent="." unique_id=630314651]
+position = Vector2(356, 1266.0001)
+scale = Vector2(14.1, 14.1)
+texture = ExtResource("14_ia1lp")
+
+[node name="PixilFrame03" type="Sprite2D" parent="." unique_id=1391289943]
+position = Vector2(2638.9998, 61)
+scale = Vector2(6.79, 6.79)
+texture = ExtResource("15_5buja")
+
+[node name="PixilFrame08" type="Sprite2D" parent="." unique_id=327655562]
+position = Vector2(2959, 1202)
+scale = Vector2(5.11, 5.11)
+texture = ExtResource("16_wyygt")
 
 [connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [20]]
 [connection signal="button_pressed" from="Button2" to="Bridge" method="extend" binds= [3]]

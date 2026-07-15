@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b1if5jl6n3xd2" path="res://Scripts/play.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://byn0opqafiuni" path="res://Textures/play-button.png" id="1_158mb"]
-[ext_resource type="PackedScene" uid="uid://c8sem0bcll1vv" path="res://Scenes/Levels/tutorial.tscn" id="2_xhh6f"]
+[ext_resource type="FontFile" uid="uid://6ythseel4164" path="res://Fonts/Audex-Regular.ttf" id="1_wbdvm"]
 [ext_resource type="Script" uid="uid://d4dyydk5oo67l" path="res://Scripts/exit.gd" id="3_cayip"]
+[ext_resource type="PackedScene" uid="uid://cesxqiy7n1d57" path="res://Scenes/level_select.tscn" id="4_wbdvm"]
 [ext_resource type="Texture2D" uid="uid://ccnev2oens0uv" path="res://Textures/exit-door.png" id="4_wwsa2"]
-[ext_resource type="Texture2D" uid="uid://blyfygsoso6x2" path="res://Textures/5c8c18f0-8508-4842-b01f-0d5ce520c91d.png" id="6_jsrd8"]
+[ext_resource type="AudioStream" uid="uid://c7sghifogek27" path="res://Sounds/Slimed out! [draft 3].mp3" id="7_wbdvm"]
 
 [node name="Menu" type="Control" unique_id=783149539]
 layout_mode = 3
@@ -15,57 +16,87 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=873135566]
-layout_mode = 0
-offset_left = -3996.0
-offset_top = -2350.0
-offset_right = -3956.0
-offset_bottom = -2310.0
-scale = Vector2(239.65417, 157.21191)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1257204788]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=490356033]
+offset_left = -1453.9999
+offset_top = -1377.9999
+offset_right = -1413.9999
+offset_bottom = -1337.9999
+scale = Vector2(117.071, 117.071)
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="Sprite2D" parent="." unique_id=91240303]
-position = Vector2(154, 566)
-scale = Vector2(2.104127, 2.104127)
-texture = ExtResource("6_jsrd8")
+[node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer" unique_id=1992349511]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -37.0
+offset_right = 172.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Play" type="Button" parent="." unique_id=733995029]
-layout_mode = 1
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer3" unique_id=1949768557]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7767775, 0.9920446, 0.65963084, 1)
+theme_override_fonts/font = ExtResource("1_wbdvm")
+theme_override_font_sizes/font_size = 64
+text = "Slime-tosis"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=803311948]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -254.0
-offset_right = 254.0
-offset_bottom = 508.0
+offset_left = -115.0
+offset_top = 228.0
+offset_right = 393.0
+offset_bottom = 736.0
 grow_horizontal = 2
-scale = Vector2(0.58267295, 0.58267295)
+scale = Vector2(0.5, 0.5)
+
+[node name="Play" type="Button" parent="CanvasLayer/CenterContainer" unique_id=733995029]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 119
 icon = ExtResource("1_158mb")
 icon_alignment = 1
 script = ExtResource("1_1rerr")
-initial_scene = ExtResource("2_xhh6f")
+initial_scene = ExtResource("4_wbdvm")
 
-[node name="Exit" type="Button" parent="." unique_id=923663006]
-layout_mode = 1
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer" unique_id=1444033776]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -260.0
+offset_left = -115.0
 offset_top = -520.0
-offset_right = 260.0
+offset_right = 405.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.58267295, 0.58267295)
+scale = Vector2(0.5, 0.5)
+
+[node name="Exit" type="Button" parent="CanvasLayer/CenterContainer2" unique_id=923663006]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 offset_transform_enabled = true
 theme_override_font_sizes/font_size = 119
 icon = ExtResource("4_wwsa2")
 icon_alignment = 1
 script = ExtResource("3_cayip")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=959520184]
-position = Vector2(622, 600)
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1312997617]
+position = Vector2(822, 523)
+stream = ExtResource("7_wbdvm")
+autoplay = true
+max_distance = 4096.0
+parameters/looping = true
 
-[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
-[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Play" to="CanvasLayer/CenterContainer/Play" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer2/Exit" to="CanvasLayer/CenterContainer2/Exit" method="_on_pressed"]

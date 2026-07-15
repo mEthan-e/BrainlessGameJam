@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="3_167vu"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="4_x1k1j"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="5_4ahh4"]
+[ext_resource type="PackedScene" uid="uid://bie07qcrx47ri" path="res://Scenes/Levels/level_4.tscn" id="6_4ahh4"]
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="6_yy6i0"]
 [ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="8_4ahh4"]
 
-[node name="level_4" type="Node2D" unique_id=726940436]
+[node name="level_3" type="Node2D" unique_id=726940436]
 
 [node name="BG" parent="." unique_id=1946878365 instance=ExtResource("1_x1k1j")]
 modulate = Color(1, 1, 1, 0.23137255)
@@ -85,33 +86,34 @@ position = Vector2(558, 1873)
 [node name="Button5" parent="." unique_id=162478537 instance=ExtResource("3_167vu")]
 position = Vector2(4096, 3008)
 
+[node name="Button6" parent="." unique_id=904909259 instance=ExtResource("3_167vu")]
+position = Vector2(1955, 344)
+
+[node name="Button7" parent="." unique_id=1001634936 instance=ExtResource("3_167vu")]
+position = Vector2(2961, 2108)
+
+[node name="Button8" parent="." unique_id=1426799842 instance=ExtResource("3_167vu")]
+position = Vector2(4087, 661)
+
 [node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("6_yy6i0")]
-position = Vector2(4504, 1599)
+position = Vector2(4415, 1606)
+next_level = ExtResource("6_4ahh4")
+
+[node name="RigidBody2D" parent="." unique_id=1380601630 instance=ExtResource("8_4ahh4")]
+position = Vector2(4653, 32)
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_x1k1j")]
-position = Vector2(369, 246)
+position = Vector2(312, 142)
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("5_4ahh4")]
 position = Vector2(47, 71)
 zoom = Vector2(0.4, 0.4)
-
-[node name="Crate" parent="." unique_id=71095225 instance=ExtResource("8_4ahh4")]
-position = Vector2(85.000015, 3595)
-scale = Vector2(5.762084, 5.762084)
-
-[node name="Crate2" parent="." unique_id=2061276276 instance=ExtResource("8_4ahh4")]
-position = Vector2(78, 39.000122)
-scale = Vector2(5.762084, 5.762084)
-
-[node name="Crate3" parent="." unique_id=686324799 instance=ExtResource("8_4ahh4")]
-position = Vector2(223, -6.000004)
-scale = Vector2(2.671352, 2.671352)
 
 [connection signal="button_pressed" from="Button" to="StaticBody2D" method="disable_laser"]
 [connection signal="button_pressed" from="Button" to="StaticBody2D4" method="disable_laser"]
 [connection signal="button_pressed" from="Button2" to="StaticBody2D3" method="disable_laser"]
 [connection signal="button_pressed" from="Button2" to="StaticBody2D5" method="disable_laser"]
 [connection signal="button_pressed" from="Button3" to="StaticBody2D8" method="disable_laser"]
-[connection signal="button_pressed" from="Button4" to="StaticBody2D2" method="disable_laser"]
 [connection signal="button_pressed" from="Button4" to="StaticBody2D6" method="disable_laser"]
+[connection signal="button_pressed" from="Button4" to="StaticBody2D2" method="disable_laser"]
 [connection signal="button_pressed" from="Button5" to="StaticBody2D7" method="disable_laser"]

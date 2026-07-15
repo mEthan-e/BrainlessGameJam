@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://bie07qcrx47ri"]
+
+[ext_resource type="PackedScene" uid="uid://g74nmkvwaple" path="res://Scenes/LevelDesign/laser.tscn" id="1_h0uxt"]
+[ext_resource type="PackedScene" uid="uid://dtdbjngm3ynlt" path="res://Scenes/LevelDesign/one_way.tscn" id="1_jqrsn"]
+[ext_resource type="PackedScene" uid="uid://cvpxn5hr3h5pt" path="res://Scenes/LevelDesign/Decor/bg.tscn" id="1_slbhm"]
+[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="1_t74h0"]
+[ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="1_xq0e5"]
+[ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="2_6grq2"]
+[ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="3_6grq2"]
+[ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="4_vwhew"]
+[ext_resource type="PackedScene" uid="uid://m7xf36ti65l0" path="res://Scenes/LevelDesign/Logic/logic_not.tscn" id="5_keyqw"]
+[ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="7_gsxik"]
+[ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="9_keyqw"]
+[ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="11_3asqb"]
+
+[node name="level_4" type="Node2D" unique_id=1194991776]
+
+[node name="BG" parent="." unique_id=1946878365 instance=ExtResource("1_slbhm")]
+modulate = Color(1, 1, 1, 0.2627451)
+position = Vector2(3858, -1836)
+scale = Vector2(348.56418, -368.5544)
+
+[node name="StaticBody2D" parent="." unique_id=1983723932 instance=ExtResource("1_h0uxt")]
+position = Vector2(1195, -2897.0002)
+scale = Vector2(87.22572, 29.545725)
+
+[node name="Door" parent="." unique_id=1914672110 instance=ExtResource("1_t74h0")]
+position = Vector2(2778, -10.000061)
+rotation = -1.5707964
+scale = Vector2(51.756958, 9.316947)
+extention_length = 0.0
+
+[node name="Door5" parent="." unique_id=84163933 instance=ExtResource("1_t74h0")]
+position = Vector2(7067, -1792)
+rotation = -1.5707964
+scale = Vector2(59.396957, 9.316947)
+extention_length = 0.0
+
+[node name="Door3" parent="." unique_id=890969892 instance=ExtResource("1_t74h0")]
+position = Vector2(980.0001, -3834)
+scale = Vector2(118.15696, 9.316947)
+extention_length = 0.0
+
+[node name="Door4" parent="." unique_id=535776505 instance=ExtResource("1_t74h0")]
+position = Vector2(5656, -6771)
+rotation = 1.5707964
+scale = Vector2(61.996952, 9.316947)
+extention_length = 0.0
+
+[node name="Door2" parent="." unique_id=803345724 instance=ExtResource("1_t74h0")]
+position = Vector2(5382, 1658)
+rotation = -1.5707964
+scale = Vector2(51.756958, 9.316947)
+extention_length = 0.0
+
+[node name="One-way" parent="." unique_id=837058465 instance=ExtResource("1_jqrsn")]
+position = Vector2(1047, -4519)
+rotation = -3.1415925
+scale = Vector2(0.52286667, 0.2614345)
+
+[node name="Wall" parent="." unique_id=1859248940 instance=ExtResource("2_6grq2")]
+position = Vector2(-2111, -6277.0005)
+rotation = 1.5707964
+scale = Vector2(3.5599995, 1.8399994)
+
+[node name="Wall5" parent="." unique_id=1176159283 instance=ExtResource("2_6grq2")]
+position = Vector2(962.0001, -4550)
+rotation = 1.5707964
+scale = Vector2(2.1599984, 0.31999886)
+
+[node name="Wall8" parent="." unique_id=1268187278 instance=ExtResource("2_6grq2")]
+position = Vector2(2665, -964)
+rotation = 1.5707964
+scale = Vector2(2.1599984, 0.55999583)
+
+[node name="Wall9" parent="." unique_id=915523278 instance=ExtResource("2_6grq2")]
+position = Vector2(1057.0001, -2054)
+scale = Vector2(0.9599978, 0.31999582)
+
+[node name="Wall10" parent="." unique_id=1311654722 instance=ExtResource("2_6grq2")]
+position = Vector2(6970, -1689)
+scale = Vector2(0.9599978, 0.31999582)
+
+[node name="Wall11" parent="." unique_id=109188828 instance=ExtResource("2_6grq2")]
+position = Vector2(6907, -4107)
+scale = Vector2(0.9599978, 0.31999582)
+
+[node name="Wall6" parent="." unique_id=2127525619 instance=ExtResource("2_6grq2")]
+position = Vector2(944, -4210)
+scale = Vector2(2.1599984, 0.31999886)
+
+[node name="Wall7" parent="." unique_id=1897633822 instance=ExtResource("2_6grq2")]
+position = Vector2(5732, -92)
+rotation = -1.5707964
+scale = Vector2(1.9999998, 0.31999886)
+
+[node name="Wall3" parent="." unique_id=485501407 instance=ExtResource("2_6grq2")]
+position = Vector2(8246.999, -8610)
+rotation = 1.5707964
+scale = Vector2(5.2448606, 2.4281037)
+
+[node name="Wall2" parent="." unique_id=356960092 instance=ExtResource("2_6grq2")]
+position = Vector2(9394.001, -8462)
+rotation = 3.1415927
+scale = Vector2(5.239994, 2.1599998)
+
+[node name="Wall4" parent="." unique_id=26957466 instance=ExtResource("2_6grq2")]
+position = Vector2(9375, 1165)
+rotation = 3.1415927
+scale = Vector2(5.2800035, 2.599999)
+
+[node name="LogicNot" parent="." unique_id=852876162 instance=ExtResource("5_keyqw")]
+
+[node name="Button" parent="." unique_id=1649036504 instance=ExtResource("4_vwhew")]
+position = Vector2(3780, -4895)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button2" parent="." unique_id=1407934220 instance=ExtResource("4_vwhew")]
+position = Vector2(4487, -4895)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button5" parent="." unique_id=62800383 instance=ExtResource("4_vwhew")]
+position = Vector2(3553, 702)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button6" parent="." unique_id=1877491056 instance=ExtResource("4_vwhew")]
+position = Vector2(5093, -301)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button3" parent="." unique_id=1998064807 instance=ExtResource("4_vwhew")]
+position = Vector2(3036, -4895)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button4" parent="." unique_id=1243409614 instance=ExtResource("4_vwhew")]
+position = Vector2(6043.9995, -3848)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button7" parent="." unique_id=1755698379 instance=ExtResource("4_vwhew")]
+position = Vector2(6035, -3293)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button8" parent="." unique_id=1163719845 instance=ExtResource("4_vwhew")]
+position = Vector2(6044, -2792)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="Button9" parent="." unique_id=1023626565 instance=ExtResource("4_vwhew")]
+position = Vector2(6044, -2282)
+scale = Vector2(5.9397426, 5.9397426)
+
+[node name="LogicAnd" parent="." unique_id=1915191176 instance=ExtResource("7_gsxik")]
+
+[node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("3_6grq2")]
+position = Vector2(244, 156)
+zoom = Vector2(0.4, 0.4)
+
+[node name="RigidBody2D" parent="." unique_id=1380601630 instance=ExtResource("9_keyqw")]
+position = Vector2(3426, -4001)
+
+[node name="LogicAnd2" parent="." unique_id=1006436376 instance=ExtResource("7_gsxik")]
+
+[node name="LogicAnd3" parent="." unique_id=1174496432 instance=ExtResource("7_gsxik")]
+
+[node name="LogicAnd4" parent="." unique_id=83113452 instance=ExtResource("7_gsxik")]
+
+[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("1_xq0e5")]
+position = Vector2(429, -2390.9998)
+scale = Vector2(1.647955, 1.647955)
+SPEED = 800.0
+
+[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("11_3asqb")]
+position = Vector2(7658, -3022)
+rotation = 1.5707964
+scale = Vector2(3.3530207, 3.3530207)
+
+[connection signal="not_triggered" from="LogicNot" to="StaticBody2D" method="disable_laser"]
+[connection signal="button_pressed" from="Button" to="LogicNot" method="input_a_trigger"]
+[connection signal="button_pressed" from="Button" to="Door3" method="extend" binds= [2]]
+[connection signal="button_pressed" from="Button2" to="Door4" method="extend" binds= [2]]
+[connection signal="button_pressed" from="Button2" to="Door2" method="extend" binds= [2]]
+[connection signal="button_pressed" from="Button5" to="LogicAnd" method="input_a_trigger"]
+[connection signal="button_pressed" from="Button6" to="LogicAnd" method="input_b_trigger"]
+[connection signal="button_pressed" from="Button3" to="Door" method="extend" binds= [5]]
+[connection signal="button_pressed" from="Button4" to="LogicAnd2" method="input_a_trigger"]
+[connection signal="button_pressed" from="Button7" to="LogicAnd2" method="input_b_trigger"]
+[connection signal="button_pressed" from="Button8" to="LogicAnd3" method="input_a_trigger"]
+[connection signal="button_pressed" from="Button9" to="LogicAnd3" method="input_b_trigger"]
+[connection signal="and_triggered" from="LogicAnd" to="Door4" method="extend" binds= [2]]
+[connection signal="and_triggered" from="LogicAnd" to="Door2" method="extend" binds= [2]]
+[connection signal="and_triggered" from="LogicAnd2" to="LogicAnd4" method="input_a_trigger"]
+[connection signal="and_triggered" from="LogicAnd3" to="LogicAnd4" method="input_b_trigger"]
+[connection signal="and_triggered" from="LogicAnd4" to="Door5" method="extend" binds= [2]]

@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="10_iol1o"]
 [ext_resource type="PackedScene" uid="uid://clyeo05johq7a" path="res://Scenes/Levels/level_1.tscn" id="12_qvtqq"]
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="12_sghjv"]
+[ext_resource type="Texture2D" uid="uid://cw4c14mywfm5o" path="res://Textures/pixil-frame-0_1.png" id="14_35mx6"]
+[ext_resource type="Texture2D" uid="uid://bekh02dr5gylv" path="res://Textures/pixil-frame-0_3.png" id="16_ku8a2"]
+[ext_resource type="Texture2D" uid="uid://brvccvgdkr8n0" path="res://Textures/table.png" id="17_mj38t"]
 
 [node name="Tutorial" type="Node2D" unique_id=282511073]
 
@@ -98,8 +101,23 @@ position = Vector2(4446, 505)
 scale = Vector2(1.2143536, 1.2143536)
 next_level = ExtResource("12_qvtqq")
 
+[node name="PixilFrame01" type="Sprite2D" parent="." unique_id=211235666]
+position = Vector2(86, 866)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("14_35mx6")
+
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("2_302wg")]
 position = Vector2(731, 582)
 collision_layer = 3
+
+[node name="PixilFrame03" type="Sprite2D" parent="." unique_id=1195537077]
+position = Vector2(76, 146)
+scale = Vector2(8.25389, 8.25389)
+texture = ExtResource("16_ku8a2")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=1822219261]
+position = Vector2(4403, 901)
+scale = Vector2(11.0973015, 11.0973015)
+texture = ExtResource("17_mj38t")
 
 [connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [5.0]]

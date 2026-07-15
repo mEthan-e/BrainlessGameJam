@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cesxqiy7n1d57"]
+
+[ext_resource type="Script" uid="uid://b1if5jl6n3xd2" path="res://Scripts/play.gd" id="1_s6o25"]
+[ext_resource type="PackedScene" uid="uid://c8sem0bcll1vv" path="res://Scenes/Levels/tutorial.tscn" id="2_kb5mc"]
+[ext_resource type="PackedScene" uid="uid://clyeo05johq7a" path="res://Scenes/Levels/level_1.tscn" id="3_qnihq"]
+[ext_resource type="PackedScene" uid="uid://v2jd0sqgmbp1" path="res://Scenes/Levels/level_2.tscn" id="4_tgoug"]
+[ext_resource type="PackedScene" uid="uid://bi1vyae1shjg3" path="res://Scenes/Levels/level_3.tscn" id="5_x038j"]
+[ext_resource type="PackedScene" uid="uid://bie07qcrx47ri" path="res://Scenes/Levels/level_4.tscn" id="6_mlwxk"]
+[ext_resource type="AudioStream" uid="uid://c7sghifogek27" path="res://Sounds/Slimed out! [draft 3].mp3" id="7_kb5mc"]
+
+[node name="level_select" type="Control" unique_id=1406118788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2134618805]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1719257319]
+offset_left = 35.0
+offset_top = 37.0
+offset_right = 1577.0
+offset_bottom = 1039.0
+columns = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer" unique_id=1713371336]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "    0    "
+script = ExtResource("1_s6o25")
+initial_scene = ExtResource("2_kb5mc")
+
+[node name="Button2" type="Button" parent="CanvasLayer/GridContainer" unique_id=1457298613]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "    1    "
+script = ExtResource("1_s6o25")
+initial_scene = ExtResource("3_qnihq")
+
+[node name="Button3" type="Button" parent="CanvasLayer/GridContainer" unique_id=1913483819]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "    2    "
+script = ExtResource("1_s6o25")
+initial_scene = ExtResource("4_tgoug")
+
+[node name="Button4" type="Button" parent="CanvasLayer/GridContainer" unique_id=1590228728]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "    3    "
+script = ExtResource("1_s6o25")
+initial_scene = ExtResource("5_x038j")
+
+[node name="Button5" type="Button" parent="CanvasLayer/GridContainer" unique_id=288650162]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "    4    "
+script = ExtResource("1_s6o25")
+initial_scene = ExtResource("6_mlwxk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1888692881]
+layout_mode = 0
+offset_left = -1453.9999
+offset_top = -1377.9999
+offset_right = -1413.9999
+offset_bottom = -1337.9999
+scale = Vector2(117.071, 117.071)
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=567134267]
+position = Vector2(822, 523)
+stream = ExtResource("7_kb5mc")
+autoplay = true
+max_distance = 4096.0
+parameters/looping = true
+
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button" to="CanvasLayer/GridContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button2" to="CanvasLayer/GridContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button3" to="CanvasLayer/GridContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button4" to="CanvasLayer/GridContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/Button5" to="CanvasLayer/GridContainer/Button5" method="_on_pressed"]

@@ -8,7 +8,6 @@ func _process(delta: float) -> void:
 	for body in bodies:
 		if (body.is_in_group("players")):
 			if(body.on_bridge <= 0):
-				
 				var player = AudioStreamPlayer2D.new() 
 				player.stream = death_sfx
 				player.attenuation = 0.0
@@ -17,7 +16,5 @@ func _process(delta: float) -> void:
 				body.queue_free()
 				if (!is_dying):
 					is_dying = true
-					await get_tree().create_timer(0.5).timeout
-					is_dying = false
-				
+					await get_tree().create_timer(1.5).timeout
 				get_tree().reload_current_scene()

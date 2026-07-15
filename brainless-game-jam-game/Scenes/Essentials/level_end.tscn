@@ -1,36 +1,125 @@
 [gd_scene format=3 uid="uid://c4gea8rsk3h2e"]
 
 [ext_resource type="Script" uid="uid://dh7eyt4cgcqml" path="res://Scripts/level_end_trigger.gd" id="1_btf5b"]
-[ext_resource type="AudioStream" uid="uid://bqbwtig048jwh" path="res://Sounds/Win sfx.mp3" id="2_11hq4"]
-[ext_resource type="Texture2D" uid="uid://b8ex1eteitdpp" path="res://Textures/pixil-frame-0_n2.png" id="2_cfjvi"]
+[ext_resource type="Texture2D" uid="uid://dwvyr674ehgio" path="res://Textures/pixilart-sprite_8.png" id="2_cfjvi"]
+[ext_resource type="AudioStream" uid="uid://ce3rrx0r5ncxq" path="res://Sounds/vent sfx.mp3" id="3_11hq4"]
+[ext_resource type="FontFile" uid="uid://6ythseel4164" path="res://Fonts/Audex-Regular.ttf" id="4_ldk7c"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hagow"]
-radius = 14.5
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0e56"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwywt"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxkmh"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmar0"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mbq1"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i72id"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xypu0"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ba5"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8253t"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2ub3"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l12sp"]
+atlas = ExtResource("2_cfjvi")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btf5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0e56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwywt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxkmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmar0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mbq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i72id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xypu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ba5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8253t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l12sp")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afv7b"]
+size = Vector2(31.25, 9.25)
 
 [node name="LevelEnd" type="Area2D" unique_id=992756739]
 script = ExtResource("1_btf5b")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435761245]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1552404313]
 position = Vector2(20, 20)
-scale = Vector2(4, 4)
-texture = ExtResource("2_cfjvi")
+scale = Vector2(1.4484811, 1.4484811)
+sprite_frames = SubResource("SpriteFrames_btf5b")
+frame = 10
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623840804]
-position = Vector2(21, 20)
+position = Vector2(16.5, 30.5)
 scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_hagow")
+shape = SubResource("RectangleShape2D_afv7b")
 
 [node name="win" type="AudioStreamPlayer2D" parent="." unique_id=716397003]
-stream = ExtResource("2_11hq4")
+stream = ExtResource("3_11hq4")
 
 [node name="Label" type="Label" parent="." unique_id=1575900193]
 custom_maximum_size = Vector2(400, 400)
-offset_left = -144.0
-offset_top = -113.0
-offset_right = -49.0
-offset_bottom = -68.0
+offset_left = -141.0
+offset_top = -104.0
+offset_right = -35.0
+offset_bottom = -67.0
 scale = Vector2(0.8219714, 0.8219714)
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_ldk7c")
 theme_override_font_sizes/font_size = 32
 text = "LABEL"
 horizontal_alignment = 1

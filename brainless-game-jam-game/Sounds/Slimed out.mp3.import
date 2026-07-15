@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfbfjti35pwi8"
+path="res://.godot/imported/Slimed out.mp3-56537ea41b3d4bfee4456f30646d25a3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Slimed out.mp3"
+dest_files=["res://.godot/imported/Slimed out.mp3-56537ea41b3d4bfee4456f30646d25a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
