@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://g74nmkvwaple"]
+
+[ext_resource type="Script" uid="uid://bp8fikj1u2bx1" path="res://Scripts/danger.gd" id="1_42c45"]
+[ext_resource type="Script" uid="uid://bkixssqkvq0xr" path="res://Scripts/laser.gd" id="1_jcuu2"]
+[ext_resource type="AudioStream" uid="uid://cy05o178pthas" path="res://Sounds/death sfx.mp3" id="3_x1mws"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_pb32r"]
+length = 50.0
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1983723932]
+script = ExtResource("1_jcuu2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=670309512]
+script = ExtResource("1_42c45")
+death_sfx = ExtResource("3_x1mws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1830965052]
+rotation = -1.5707964
+shape = SubResource("SeparationRayShape2D_pb32r")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1916426910]
+points = PackedVector2Array(0, 0, 50, 0)
+width = 4.0
+default_color = Color(0.9115605, 0.35008866, 0.37195015, 1)

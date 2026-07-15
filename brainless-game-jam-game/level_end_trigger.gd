@@ -8,7 +8,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("players")):
-		if (!body.current_split_count >= clone_size_min):
+		if (!body.current_split_count <= clone_size_min):
 			return
 		if (!win.playing):
 			win.play()

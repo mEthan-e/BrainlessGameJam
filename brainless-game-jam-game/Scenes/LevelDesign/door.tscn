@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://4111jofjex2g" path="res://Scripts/bridge.gd" id="1_3mp33"]
 [ext_resource type="AudioStream" uid="uid://b70khs21g1xx5" path="res://Sounds/door open sfx.mp3" id="2_lvb0v"]
 [ext_resource type="AudioStream" uid="uid://c7rdf6pywjgv6" path="res://Sounds/door shut sfx.mp3" id="3_l14qo"]
+[ext_resource type="Texture2D" uid="uid://cquv36icigncq" path="res://Textures/pixil-frame-0.png" id="4_l14qo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ys4pu"]
 size = Vector2(39, 39)
@@ -29,3 +30,8 @@ stream = ExtResource("2_lvb0v")
 
 [node name="close" type="AudioStreamPlayer2D" parent="." unique_id=607758500]
 stream = ExtResource("3_l14qo")
+
+[node name="PixilFrame0" type="Sprite2D" parent="." unique_id=1707492990]
+position = Vector2(19.83, 20.055)
+scale = Vector2(1.267, 1.267)
+texture = ExtResource("4_l14qo")

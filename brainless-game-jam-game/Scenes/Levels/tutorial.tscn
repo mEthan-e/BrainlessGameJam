@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://tpefjkhtaub" path="res://Textures/wasd.png" id="1_fenkg"]
 [ext_resource type="Texture2D" uid="uid://bka3crct8exeg" path="res://Textures/split tutorial.png" id="1_mhlsa"]
+[ext_resource type="PackedScene" uid="uid://cvpxn5hr3h5pt" path="res://Scenes/LevelDesign/Decor/bg.tscn" id="1_qvtqq"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="2_302wg"]
 [ext_resource type="Texture2D" uid="uid://26dv1ct5u0vf" path="res://Textures/switch tutorial.png" id="2_l2k66"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="3_idsh5"]
@@ -15,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="12_sghjv"]
 
 [node name="Tutorial" type="Node2D" unique_id=282511073]
+
+[node name="BG" parent="." unique_id=1946878365 instance=ExtResource("1_qvtqq")]
+modulate = Color(1, 1, 1, 0.13725491)
+position = Vector2(2392, 671.00006)
+scale = Vector2(165.19002, 59.351524)
 
 [node name="SplitTutorial" type="Sprite2D" parent="." unique_id=1977590202]
 modulate = Color(1, 1, 1, 0.27058825)
@@ -78,13 +84,18 @@ position = Vector2(-68, 2272)
 rotation = 4.712389
 scale = Vector2(1.5443782, 1)
 
+[node name="Wall4" parent="." unique_id=1557798349 instance=ExtResource("4_mhlsa")]
+position = Vector2(5734, 2279)
+rotation = 4.712389
+scale = Vector2(1.5443782, 1)
+
 [node name="Bridge" parent="." unique_id=709602799 instance=ExtResource("10_iol1o")]
 position = Vector2(3465.9998, 481)
 scale = Vector2(18.514685, 2.9824567)
 
 [node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("12_sghjv")]
-position = Vector2(4436, 478)
-scale = Vector2(3.3780468, 3.3780468)
+position = Vector2(4446, 505)
+scale = Vector2(1.2143536, 1.2143536)
 next_level = ExtResource("12_qvtqq")
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("2_302wg")]

@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://v2jd0sqgmbp1"]
+
+[ext_resource type="PackedScene" uid="uid://cvpxn5hr3h5pt" path="res://Scenes/LevelDesign/Decor/bg.tscn" id="1_0x4y1"]
+[ext_resource type="PackedScene" uid="uid://bvpjlix4mw0v2" path="res://Scenes/LevelDesign/danger.tscn" id="1_pnnky"]
+[ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="1_ucdhh"]
+[ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="2_oylv5"]
+[ext_resource type="PackedScene" uid="uid://cptd3dyi3j6ja" path="res://Scenes/LevelDesign/door.tscn" id="3_ovj6s"]
+[ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="3_w2ac1"]
+[ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="4_8qsmg"]
+[ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="4_ovj6s"]
+[ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="6_blpqv"]
+[ext_resource type="PackedScene" uid="uid://g74nmkvwaple" path="res://Scenes/LevelDesign/laser.tscn" id="9_blpqv"]
+[ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="10_1jlnc"]
+[ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="11_u40f0"]
+
+[node name="Level2" type="Node2D" unique_id=1093735696]
+
+[node name="BG" parent="." unique_id=1946878365 instance=ExtResource("1_0x4y1")]
+modulate = Color(1, 1, 1, 0.13725491)
+position = Vector2(2133.5, 678.0001)
+scale = Vector2(136.03123, 48.874996)
+
+[node name="Door" parent="." unique_id=1914672110 instance=ExtResource("3_ovj6s")]
+position = Vector2(-432.00003, 510)
+scale = Vector2(40.080006, 3)
+extention_length = 0.0
+
+[node name="Door2" parent="." unique_id=519794104 instance=ExtResource("3_ovj6s")]
+position = Vector2(3376, -541)
+rotation = 1.5707964
+scale = Vector2(49.159996, 3)
+extention_length = 0.0
+
+[node name="Danger" parent="." unique_id=114724795 instance=ExtResource("1_pnnky")]
+position = Vector2(1854, 1036)
+rotation = 3.1415927
+scale = Vector2(14.870093, -49.524315)
+
+[node name="Wall" parent="." unique_id=1311654722 instance=ExtResource("3_w2ac1")]
+position = Vector2(-111, 2735)
+rotation = -1.5707964
+scale = Vector2(1.7599988, 1)
+
+[node name="Wall2" parent="." unique_id=1007146007 instance=ExtResource("3_w2ac1")]
+position = Vector2(-109, -86)
+scale = Vector2(2.0000014, 1)
+
+[node name="Wall4" parent="." unique_id=1662195982 instance=ExtResource("3_w2ac1")]
+position = Vector2(5019, 1468)
+rotation = 3.1415927
+scale = Vector2(2.2800035, 1)
+
+[node name="Button" parent="." unique_id=1649036504 instance=ExtResource("4_ovj6s")]
+position = Vector2(1018, 57)
+
+[node name="LogicAnd" parent="." unique_id=852876162 instance=ExtResource("4_8qsmg")]
+
+[node name="Wall3" parent="." unique_id=13640643 instance=ExtResource("3_w2ac1")]
+position = Vector2(1140, 623)
+scale = Vector2(1, 0.1)
+
+[node name="Button2" parent="." unique_id=193527320 instance=ExtResource("4_ovj6s")]
+position = Vector2(1536, 1020)
+
+[node name="Bridge" parent="." unique_id=709602799 instance=ExtResource("6_blpqv")]
+position = Vector2(1636, 932.00006)
+extention_length = 11.0
+colour = Color(0.2784314, 0.28627452, 0.2901961, 1)
+
+[node name="Laser" parent="." unique_id=1983723932 instance=ExtResource("9_blpqv")]
+position = Vector2(2440, 441)
+rotation = 3.1415925
+scale = Vector2(25.27999, 7.0000005)
+
+[node name="LaserEmitter" type="ColorRect" parent="." unique_id=746748104]
+offset_left = 2434.0
+offset_top = 410.0
+offset_right = 2474.0
+offset_bottom = 450.0
+scale = Vector2(2.24, 3.28)
+color = Color(0.23921569, 0.23921569, 0.23921569, 1)
+
+[node name="Wall5" parent="." unique_id=1575521026 instance=ExtResource("3_w2ac1")]
+position = Vector2(1137, 604)
+scale = Vector2(0.04004371, 0.19418466)
+
+[node name="Wall6" parent="." unique_id=1588328585 instance=ExtResource("3_w2ac1")]
+position = Vector2(1418, 290)
+scale = Vector2(0.36, 1)
+
+[node name="Button3" parent="." unique_id=107739540 instance=ExtResource("4_ovj6s")]
+position = Vector2(2483, 707)
+
+[node name="Button4" parent="." unique_id=713798795 instance=ExtResource("4_ovj6s")]
+position = Vector2(2283, 44)
+
+[node name="Wall7" parent="." unique_id=94164495 instance=ExtResource("3_w2ac1")]
+position = Vector2(4341, -1180)
+rotation = 1.5707964
+scale = Vector2(1.3100011, 1)
+
+[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("10_1jlnc")]
+position = Vector2(4029, 563)
+scale = Vector2(1.3493396, 1.3493396)
+clone_size_min = 0
+
+[node name="Crate" parent="." unique_id=71095225 instance=ExtResource("11_u40f0")]
+position = Vector2(173, 1218)
+scale = Vector2(10.05052, 10.05052)
+
+[node name="Crate4" parent="." unique_id=1619834688 instance=ExtResource("11_u40f0")]
+position = Vector2(1249, 136)
+scale = Vector2(10.05052, 10.05052)
+
+[node name="Crate2" parent="." unique_id=348538985 instance=ExtResource("11_u40f0")]
+position = Vector2(413, 1312)
+scale = Vector2(4.029351, 4.029351)
+
+[node name="Crate3" parent="." unique_id=389305178 instance=ExtResource("11_u40f0")]
+position = Vector2(2593.9998, 435.00018)
+scale = Vector2(4.029351, 4.029351)
+
+[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("1_ucdhh")]
+position = Vector2(68.99988, 77.99994)
+
+[node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("2_oylv5")]
+position = Vector2(72.999756, 82.99994)
+
+[connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [20]]
+[connection signal="button_pressed" from="Button2" to="Bridge" method="extend" binds= [3]]
+[connection signal="button_pressed" from="Button3" to="Laser" method="disable_laser"]
+[connection signal="button_pressed" from="Button4" to="Door2" method="extend" binds= [3]]

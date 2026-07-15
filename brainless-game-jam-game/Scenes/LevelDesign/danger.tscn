@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bvpjlix4mw0v2"]
 
 [ext_resource type="Script" uid="uid://bp8fikj1u2bx1" path="res://Scripts/danger.gd" id="1_48tgm"]
+[ext_resource type="AudioStream" uid="uid://cy05o178pthas" path="res://Sounds/death sfx.mp3" id="2_vt47p"]
+[ext_resource type="Texture2D" uid="uid://cyqv6ljuxq4ub" path="res://Textures/pixil-frame-01 (3).png" id="3_kd7hh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pb32r"]
 
 [node name="Danger" type="Area2D" unique_id=114724795]
 script = ExtResource("1_48tgm")
+death_sfx = ExtResource("2_vt47p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1637661877]
 shape = SubResource("RectangleShape2D_pb32r")
@@ -17,4 +20,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 color = Color(0.9999998, 0.5280821, 0.23515737, 1)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=9597639]
+modulate = Color(1, 1, 1, 0.19215687)
+scale = Vector2(0.6214626, 0.6214626)
+texture = ExtResource("3_kd7hh")

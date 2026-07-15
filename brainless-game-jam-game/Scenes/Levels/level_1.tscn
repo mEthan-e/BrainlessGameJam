@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://clyeo05johq7a"]
 
 [ext_resource type="PackedScene" uid="uid://dijj71fhxb6xw" path="res://Scenes/LevelDesign/wall.tscn" id="1_cyadu"]
+[ext_resource type="PackedScene" uid="uid://cvpxn5hr3h5pt" path="res://Scenes/LevelDesign/Decor/bg.tscn" id="1_hwvp3"]
 [ext_resource type="PackedScene" uid="uid://ddicf3rvq1hck" path="res://Scenes/Essentials/camera.tscn" id="2_xgxfi"]
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="3_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://cnivocjgwguo8" path="res://Scenes/Essentials/testPlayer.tscn" id="4_jv26f"]
@@ -9,8 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://chcs4eibohqhi" path="res://Scenes/LevelDesign/button.tscn" id="6_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="7_jv26f"]
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="7_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://v2jd0sqgmbp1" path="res://Scenes/Levels/level_2.tscn" id="9_u5ghp"]
 
 [node name="level1" type="Node2D" unique_id=420048108]
+
+[node name="BG" parent="." unique_id=1946878365 instance=ExtResource("1_hwvp3")]
+modulate = Color(1, 1, 1, 0.13725491)
+position = Vector2(2158.9995, 740.99994)
+scale = Vector2(142.48402, 51.193436)
 
 [node name="Camera" parent="." unique_id=1898050018 instance=ExtResource("2_xgxfi")]
 position = Vector2(690, 514)
@@ -89,11 +96,22 @@ position = Vector2(2005, 311)
 position = Vector2(2770, 315)
 
 [node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("3_5f3p6")]
-position = Vector2(4074.9998, 518)
-scale = Vector2(4.383043, 4.383043)
+position = Vector2(4094, 566)
+scale = Vector2(1.0474361, 1.0474361)
+next_level = ExtResource("9_u5ghp")
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
 position = Vector2(29, 363)
+
+[node name="Wall3" parent="." unique_id=565493706 instance=ExtResource("1_cyadu")]
+position = Vector2(-172, 2478)
+rotation = -1.5707964
+scale = Vector2(2.56, 1)
+
+[node name="Wall4" parent="." unique_id=1256614661 instance=ExtResource("1_cyadu")]
+position = Vector2(4616, -2302)
+rotation = 1.5707964
+scale = Vector2(2.56, 2.56)
 
 [connection signal="button_pressed" from="Button4" to="LogicAnd" method="input_a_trigger"]
 [connection signal="button_pressed" from="Button5" to="LogicAnd" method="input_b_trigger"]

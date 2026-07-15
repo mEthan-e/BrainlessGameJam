@@ -148,6 +148,7 @@ func manage_regroup() -> void: # unused, old code that doesn't work
 
 		get_parent().add_child(merged_player) # why use get_parent().add_child() instead of add_sibling()?
 
+
 func _process(delta: float) -> void:
 	manage_split()
 	manage_merge()

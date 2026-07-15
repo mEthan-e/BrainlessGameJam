@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://yshxhoanof74"]
 
-[ext_resource type="Script" uid="uid://b1if5jl6n3xd2" path="res://Scenes/play.gd" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://b1if5jl6n3xd2" path="res://Scripts/play.gd" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://byn0opqafiuni" path="res://Textures/play-button.png" id="1_158mb"]
 [ext_resource type="PackedScene" uid="uid://c8sem0bcll1vv" path="res://Scenes/Levels/tutorial.tscn" id="2_xhh6f"]
-[ext_resource type="Script" uid="uid://d4dyydk5oo67l" path="res://Scenes/exit.gd" id="3_cayip"]
+[ext_resource type="Script" uid="uid://d4dyydk5oo67l" path="res://Scripts/exit.gd" id="3_cayip"]
+[ext_resource type="Texture2D" uid="uid://ccnev2oens0uv" path="res://Textures/exit-door.png" id="4_wwsa2"]
+[ext_resource type="Texture2D" uid="uid://blyfygsoso6x2" path="res://Textures/5c8c18f0-8508-4842-b01f-0d5ce520c91d.png" id="6_jsrd8"]
 
 [node name="Menu" type="Control" unique_id=783149539]
 layout_mode = 3
@@ -12,28 +15,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Play" type="Button" parent="." unique_id=733995029]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=873135566]
 layout_mode = 0
-offset_left = 1133.0
-offset_top = 256.0
-offset_right = 1737.0
-offset_bottom = 601.0
+offset_left = -3996.0
+offset_top = -2350.0
+offset_right = -3956.0
+offset_bottom = -2310.0
+scale = Vector2(239.65417, 157.21191)
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Sprite2D" parent="." unique_id=91240303]
+position = Vector2(154, 566)
+scale = Vector2(2.104127, 2.104127)
+texture = ExtResource("6_jsrd8")
+
+[node name="Play" type="Button" parent="." unique_id=733995029]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -254.0
+offset_right = 254.0
+offset_bottom = 508.0
+grow_horizontal = 2
 scale = Vector2(0.58267295, 0.58267295)
 theme_override_font_sizes/font_size = 119
-text = "BEGIN"
+icon = ExtResource("1_158mb")
+icon_alignment = 1
 script = ExtResource("1_1rerr")
 initial_scene = ExtResource("2_xhh6f")
 
 [node name="Exit" type="Button" parent="." unique_id=923663006]
-layout_mode = 0
-offset_left = 1133.0
-offset_top = 698.0
-offset_right = 1737.0
-offset_bottom = 1043.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -520.0
+offset_right = 260.0
+grow_horizontal = 2
+grow_vertical = 0
 scale = Vector2(0.58267295, 0.58267295)
+offset_transform_enabled = true
 theme_override_font_sizes/font_size = 119
-text = "EXIT"
+icon = ExtResource("4_wwsa2")
+icon_alignment = 1
 script = ExtResource("3_cayip")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=959520184]
+position = Vector2(622, 600)
 
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]

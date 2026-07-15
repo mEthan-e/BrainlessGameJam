@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ddnfk0p6mq6mg"]
+
+[ext_resource type="Texture2D" uid="uid://bj8iqn5mjju3f" path="res://Textures/pixil-frame-0 (3).png" id="1_j0jcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb32r"]
+size = Vector2(30, 30)
+
+[node name="Crate" type="Sprite2D" unique_id=71095225]
+texture = ExtResource("1_j0jcj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2080900443]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=468721556]
+shape = SubResource("RectangleShape2D_pb32r")

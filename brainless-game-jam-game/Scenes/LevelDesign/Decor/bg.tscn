@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cvpxn5hr3h5pt"]
+
+[ext_resource type="Texture2D" uid="uid://cfty8xsr67jcd" path="res://Textures/pixil-frame-0 (2).png" id="1_8bvs8"]
+
+[node name="BG" type="Sprite2D" unique_id=1946878365]
+texture = ExtResource("1_8bvs8")

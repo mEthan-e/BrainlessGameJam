@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	else:
 		extending = true
 	if (!extending && scale.x != extention_length):
-		scale.x = lerp(scale.x, original_length, 2 * get_process_delta_time())
+		scale.x = lerp(scale.x, original_length, 5 * get_process_delta_time())
 		if (!close.playing && scale.x < extention_length - 0.0001):
 			close.play()
 	
