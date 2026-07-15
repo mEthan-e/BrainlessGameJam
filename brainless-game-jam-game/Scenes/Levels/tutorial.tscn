@@ -100,5 +100,6 @@ next_level = ExtResource("12_qvtqq")
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("2_302wg")]
 position = Vector2(731, 582)
+collision_layer = 3
 
 [connection signal="button_pressed" from="Button" to="Door" method="extend" binds= [5.0]]

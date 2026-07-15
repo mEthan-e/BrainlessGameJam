@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="6_blpqv"]
 [ext_resource type="PackedScene" uid="uid://g74nmkvwaple" path="res://Scenes/LevelDesign/laser.tscn" id="9_blpqv"]
 [ext_resource type="PackedScene" uid="uid://c4gea8rsk3h2e" path="res://Scenes/Essentials/level_end.tscn" id="10_1jlnc"]
-[ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="11_u40f0"]
 
 [node name="Level2" type="Node2D" unique_id=1093735696]
 
@@ -74,9 +73,9 @@ scale = Vector2(25.27999, 7.0000005)
 
 [node name="LaserEmitter" type="ColorRect" parent="." unique_id=746748104]
 offset_left = 2434.0
-offset_top = 410.0
+offset_top = 387.0
 offset_right = 2474.0
-offset_bottom = 450.0
+offset_bottom = 434.0122
 scale = Vector2(2.24, 3.28)
 color = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
@@ -103,22 +102,6 @@ scale = Vector2(1.3100011, 1)
 position = Vector2(4029, 563)
 scale = Vector2(1.3493396, 1.3493396)
 clone_size_min = 0
-
-[node name="Crate" parent="." unique_id=71095225 instance=ExtResource("11_u40f0")]
-position = Vector2(173, 1218)
-scale = Vector2(10.05052, 10.05052)
-
-[node name="Crate4" parent="." unique_id=1619834688 instance=ExtResource("11_u40f0")]
-position = Vector2(1249, 136)
-scale = Vector2(10.05052, 10.05052)
-
-[node name="Crate2" parent="." unique_id=348538985 instance=ExtResource("11_u40f0")]
-position = Vector2(413, 1312)
-scale = Vector2(4.029351, 4.029351)
-
-[node name="Crate3" parent="." unique_id=389305178 instance=ExtResource("11_u40f0")]
-position = Vector2(2593.9998, 435.00018)
-scale = Vector2(4.029351, 4.029351)
 
 [node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("1_ucdhh")]
 position = Vector2(68.99988, 77.99994)

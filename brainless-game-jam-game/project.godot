@@ -14,10 +14,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="BrainlessGameJamGame"
+config/name="Slime-tosis"
 run/main_scene="uid://yshxhoanof74"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cx0j1fhufl7gn"
 
 [audio]
 
@@ -36,6 +36,10 @@ project/assembly_name="BrainlessGameJamGame"
 [editor]
 
 movie_writer/movie_file="D:/Github/BrainlessGameJam/brainless-game-jam-game/Recordings/game_recording.ogv"
+
+[global_group]
+
+crate=""
 
 [input]
 

@@ -2,13 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://bj8iqn5mjju3f" path="res://Textures/pixil-frame-0 (3).png" id="1_j0jcj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb32r"]
-size = Vector2(30, 30)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7oc2"]
+size = Vector2(90, 90)
 
-[node name="Crate" type="Sprite2D" unique_id=71095225]
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1380601630 groups=["crate"]]
+collision_layer = 4
+collision_mask = 5
+gravity_scale = 0.0
+linear_damp = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=487900648]
+scale = Vector2(3, 3)
 texture = ExtResource("1_j0jcj")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2080900443]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=468721556]
-shape = SubResource("RectangleShape2D_pb32r")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1788781120]
+shape = SubResource("RectangleShape2D_j7oc2")

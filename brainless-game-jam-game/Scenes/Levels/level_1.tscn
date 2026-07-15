@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://hcrff8lxfag8" path="res://Scenes/LevelDesign/Logic/logic_and.tscn" id="7_jv26f"]
 [ext_resource type="PackedScene" uid="uid://0urms2owumdv" path="res://Scenes/LevelDesign/bridge.tscn" id="7_u5ghp"]
 [ext_resource type="PackedScene" uid="uid://v2jd0sqgmbp1" path="res://Scenes/Levels/level_2.tscn" id="9_u5ghp"]
+[ext_resource type="PackedScene" uid="uid://ddnfk0p6mq6mg" path="res://Scenes/LevelDesign/Decor/crate.tscn" id="12_afv7b"]
 
 [node name="level1" type="Node2D" unique_id=420048108]
 
@@ -95,14 +96,6 @@ position = Vector2(2005, 311)
 [node name="Button3" parent="." unique_id=915877954 instance=ExtResource("6_5f3p6")]
 position = Vector2(2770, 315)
 
-[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("3_5f3p6")]
-position = Vector2(4094, 566)
-scale = Vector2(1.0474361, 1.0474361)
-next_level = ExtResource("9_u5ghp")
-
-[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
-position = Vector2(29, 363)
-
 [node name="Wall3" parent="." unique_id=565493706 instance=ExtResource("1_cyadu")]
 position = Vector2(-172, 2478)
 rotation = -1.5707964
@@ -112,6 +105,20 @@ scale = Vector2(2.56, 1)
 position = Vector2(4616, -2302)
 rotation = 1.5707964
 scale = Vector2(2.56, 2.56)
+
+[node name="RigidBody2D" parent="." unique_id=1380601630 instance=ExtResource("12_afv7b")]
+position = Vector2(373, 919)
+
+[node name="RigidBody2D2" parent="." unique_id=1910398603 instance=ExtResource("12_afv7b")]
+position = Vector2(382, 364)
+
+[node name="LevelEnd" parent="." unique_id=992756739 instance=ExtResource("3_5f3p6")]
+position = Vector2(4094, 566)
+scale = Vector2(1.0474361, 1.0474361)
+next_level = ExtResource("9_u5ghp")
+
+[node name="TestPlayer" parent="." unique_id=1252202136 instance=ExtResource("4_jv26f")]
+position = Vector2(29, 363)
 
 [connection signal="button_pressed" from="Button4" to="LogicAnd" method="input_a_trigger"]
 [connection signal="button_pressed" from="Button5" to="LogicAnd" method="input_b_trigger"]

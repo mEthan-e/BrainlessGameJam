@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4gea8rsk3h2e"]
 
-[ext_resource type="Script" uid="uid://dh7eyt4cgcqml" path="res://level_end_trigger.gd" id="1_btf5b"]
+[ext_resource type="Script" uid="uid://dh7eyt4cgcqml" path="res://Scripts/level_end_trigger.gd" id="1_btf5b"]
 [ext_resource type="AudioStream" uid="uid://bqbwtig048jwh" path="res://Sounds/Win sfx.mp3" id="2_11hq4"]
 [ext_resource type="Texture2D" uid="uid://b8ex1eteitdpp" path="res://Textures/pixil-frame-0_n2.png" id="2_cfjvi"]
 

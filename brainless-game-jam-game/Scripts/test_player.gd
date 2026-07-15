@@ -11,7 +11,9 @@ var is_controlling: bool
 var id: int = 0
 var id_to_assign: int = 0
 var prev_id: int
-var on_bridge: bool = false
+var on_bridge: int = 0
+var on_lava: bool = false
+var mergeable_dist: bool = false
 
 const SPEED = 400.0
 var direction
@@ -94,7 +96,7 @@ func manage_merge() -> void: # manages the merging of two clones, we could add a
 		
 		
 		for clone in get_parent().get_children():
-			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge))):
+			if (clone.is_in_group("players") && clone.is_in_group(str(id_to_merge)) && clone.mergeable_dist):
 				mergeable = true
 				mean_pos += clone.position
 				print("clone of id %s deleted" % [clone.id])
@@ -150,6 +152,7 @@ func manage_regroup() -> void: # unused, old code that doesn't work
 
 
 func _process(delta: float) -> void:
+	on_lava = false
 	manage_split()
 	manage_merge()
 
@@ -160,3 +163,14 @@ func _on_button_pressed() -> void:
 		if clone.is_in_group("players") && clone != self:
 			clone.is_controlling = false
 	# disable other clones control.
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if (body.is_in_group("players") && body.id == id):
+		body.mergeable_dist = true
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if (body.is_in_group("players") && body.id == id):
+		body.mergeable_dist = false

@@ -9,4 +9,4 @@ func disable_laser() -> void:
 
 func _process(delta: float) -> void:
 	area_2d.monitoring = true
-	line_2d.width = 4.0
+	line_2d.width = 10.0

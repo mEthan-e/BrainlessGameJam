@@ -11,7 +11,7 @@ signal button_pressed
 var pressed: bool = false
 
 func _on_body_entered(body: Node2D) -> void:
-	if (body.is_in_group("players") && !pressed):
+	if ((body.is_in_group("players") || body.is_in_group("crate")) && !pressed):
 		current_body = body
 		button.texture = pressed_texture
 		pressed = true
@@ -20,7 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if (body.is_in_group("players") && body == current_body):
+	if ((body.is_in_group("players") || body.is_in_group("crate")) && body == current_body):
 		button.texture = basic_texture
 		pressed = false
 		if(!button_off.playing):
